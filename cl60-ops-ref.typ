@@ -1,4 +1,4 @@
-#import "Typst-checklist-template/template/template.typ": *
+#import "typst-checklist-mzt/template/template.typ": *
 #import "@preview/oxifmt:1.0.0": strfmt
 #set text(font: "Sarasa Fixed CL")
 #show math.equation: set text(font: ("Sarasa Fixed CL", "Fira Math"), weight: "regular")

@@ -1,0 +1,4 @@
+[submodule "typst-checklist-mzt"]
+	path = typst-checklist-mzt
+	url = git@github.com:Zhongtai-Virtual/typst-checklist-mzt.git
+	branch = main
