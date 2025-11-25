@@ -1,48 +1,8 @@
-#set text(font: "Sarasa Fixed CL", size: 8pt)
-#show math.equation: set text(font: ("Sarasa Fixed CL", "Fira Math"), weight: "regular")
-#show "_": "___"
-
-#let meta = toml("meta.toml")
-#let mcolor = meta.metadata.color
-#let revision = meta.metadata.date
-
-#set page(
-  margin: (top: 0.2in, bottom: 0.2in, left: 1in, right: 1in),
-  paper: "us-letter",
-  footer: box(width: 1fr, rect(width: 100%, fill: color.rgb(mcolor))),
-  header: box(width: 1fr, rect(width: 100%, fill: color.rgb(mcolor)))
-)
-
-#show grid.cell: it => align(center+horizon, it)
-#stack(dir: ttb,
-  grid(
-    columns: (25%, 55%, 20%),
-    rows: (6mm, 6mm),
-    grid.cell(rowspan: 2)[
-      #box(inset: 2mm)[
-        #set par(leading: 0.5em)
-        #set text(size: 10pt, weight: "bold")
-        Challenger 650\ 
-        #set text(size: 8pt)
-        Zhongtai Virtual
-      ]
-    ],
-    grid.cell(rowspan: 2)[
-      #set text(weight: "bold")
-      Standard Callouts
-    ],
-    [
-      #set text(size: 16pt, weight: "bold")
-      N4
-    ],
-    [
-      #set text(size: 8pt)
-      #revision
-    ]
-  ),
-)
-
-Standard Callouts 
+#import "./common.typ": *
+#show: page-template
+#set par(leading: 0.5em)
+#set page(flipped: false)
+#page-header("STANDARD CALLOUTS", "R2")
  
 Both crewmembers should be continuously aware of current airplane altitude, position, 
 energy state, configuration, and maintain situational awareness appropriate for the phase 

@@ -1,7 +1,7 @@
 #import "typst-checklist-mzt/template/template.typ": *
 #import "@preview/oxifmt:1.0.0": strfmt
 
-#let page-header-from-config(config) = {
+#let page-header(title, page) = {
   let meta = toml("meta.toml")
   let mcolor = meta.metadata.color
   let revision = meta.metadata.date
@@ -22,12 +22,12 @@
         ]
       ],
       grid.cell(rowspan: 2)[
-        #set text(weight: "bold")
-        #config.metadata.group
+        #set text(12pt, weight: "bold")
+        #title
       ],
       [
         #set text(size: 16pt, weight: "bold")
-        #config.metadata.page
+        #page
       ],
       [
         #set text(size: 8pt)
@@ -37,7 +37,9 @@
   )
 }
 
-#let page-template(config, content) = {
+#let page-header-from-config(config) = page-header(config.metadata.group, config.metadata.page)
+
+#let page-template(content) = {
   let meta = toml("meta.toml")
   let mcolor = meta.metadata.color
   let revision = meta.metadata.date
@@ -82,7 +84,6 @@
           } else if "rmk" in item {
             align(center)[
               #set text(style: "italic")
-              #set par(spacing: 1em, leading: 0.5em, justify: true)
               #item.rmk
             ]
           } else {
