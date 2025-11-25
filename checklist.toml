@@ -1,0 +1,320 @@
+[metadata]
+page = "N1"
+group = "Normal Checklist"
+type = "normal"
+
+[[checklists]]
+name = "Preflight checklist"
+type = "CR[F-]"
+[[checklists.items]]
+rmk = "Captain calls for the checklist after all preflight items and briefings are completed, with performance, fuel, and clearance ready."
+[[checklists.items]]
+left = "Flight Crew Briefing"
+right = "Complete [C]"
+[[checklists.items]]
+left = "ACARS/CPDLC Login"
+right = "checked [F,C]"
+[[checklists.items]]
+left = "Oxygen"
+right = "checked [All]"
+[[checklists.items]]
+left = "Pressurization"
+right = "Set [C]"
+[[checklists.items]]
+left = "ALTIMETER"
+right = "_ inHg/hPa SET [F,C]"
+capitalize = false
+[[checklists.items]]
+left = "flight Instruments"
+right = "checked [F,C]"
+[[checklists.items]]
+left = "Parking Brake"
+right = "Set [C]"
+[[checklists.items]]
+left = "Thrust levers"
+right = "shutoff [C]"
+
+[[checklists]]
+name = "Before start checklist"
+type = "CR[F-C]"
+[[checklists.items]]
+rmk = "Captain calls for the checklist after ALL doors closed and external support has been removed."
+[[checklists.items]]
+left = "Passenger Sign"
+right = "On/Auto [C]"
+[[checklists.items]]
+left = "Fuel"
+right = "Planned _, _ on board [C]"
+[[checklists.items]]
+left = "Fuel Boost Pumps"
+right = "on [C]"
+[[checklists.items]]
+left = "Hyd Pumps"
+right = "Checked / Auto / 3A On [C]"
+[[checklists.items]]
+left = "Doors"
+right = "Closed [C]"
+
+[[checklists]]
+name = "After start Checklist"
+type = "CR[F-C]"
+[[checklists.items]]
+rmk = "Captain calls for the checklist after AFTER START flow has been completed."
+[[checklists.items]]
+left = "GEN 1 & 2"
+right = "On [C]"
+[[checklists.items]]
+left = "Flight Controls"
+right = "Checked [C]"
+[[checklists.items]]
+left = "ATS"
+right = "N1-TO [C]"
+[[checklists.items]]
+left = "ATC/TCAS"
+right = "TA/RA [C]"
+
+[[checklists]]
+name = "Before takeoff checklist"
+type = "CR[F-C]"
+[[checklists.items]]
+rmk = "Captain calls for the checklist as All performance and Flight guidance has been setup on FMC/FCP."
+[[checklists.items]]
+left = "Continuous Ignition"
+right = "armed"
+[[checklists.items]]
+left = "Flaps"
+right = "20"
+[[checklists.items]]
+left = "FMC"
+right = "_ (RWY, SID & Trans), Set [F, C]"
+[[checklists.items]]
+left = "EFIS/ATS/EICAS"
+right = "Set [F, C]"
+
+[[checklists]]
+name = "After Takeoff Checklist"
+type = "CR[PM-PM]"
+[[checklists.items]]
+rmk = "Pilot Flying calls for the checklist after flaps retract command."
+[[checklists.items]]
+left = "Landing Gear"
+right = "Up"
+[[checklists.items]]
+left = "Flaps"
+right = "Up"
+[[checklists.items]]
+left = "Thrust Reversers"
+right = "Off"
+[[checklists.items]]
+left = "continuous ignition"
+right = "Off"
+[[checklists.items]]
+left = "Packs Transition"
+right = "Completed"
+[[checklists.items]]
+left = "N1 CLB"
+right = "Set"
+[[checklists.items]]
+left = "APU GEN"
+right = "Off"
+[[checklists.items]]
+left = "APU"
+right = "Shutdown"
+[[checklists.items]]
+left = "CAS"
+right = "Clear"
+
+
+[[checklists]]
+name = ">>Immediate return checklist<<"
+type = "RD"
+[[checklists.items]]
+left = "PRESSURIZATION"
+right = "SET"
+[[checklists.items]]
+left = "ALTIMETERS"
+right = "SET / CROSS-checked"
+[[checklists.items]]
+left = "THRUST REVERSERS"
+right = "ARMED"
+[[checklists.items]]
+left = "LANDING DATA"
+right = "SET"
+[[checklists.items]]
+left = "APPROACH BRIEFING"
+right = "COMPLETE"
+[[checklists.items]]
+left = "FUEL QUANTITY / BALANCE"
+right = "COMPLETE"
+[[checklists.items]]
+left = "CAS"
+right = "checked"
+[[checklists.items]]
+rmk = "Go to BEFORE LANDING CHECKLIST"
+
+
+[[checklists]]
+name = "Descend checklist"
+type = "RD[PM]"
+[[checklists.items]]
+rmk = "Pilot Flying calls for the checklist\nbefore reaching 10,000ft, or\n as appropriate for high altitude operations."
+[[checklists.items]]
+left = "N1 TGT"
+right = "91 Set"
+[[checklists.items]]
+left = "APU"
+right = "Start" 
+[[checklists.items]]
+left = "APU GEN"
+right = "on" 
+[[checklists.items]]
+left = "External Lights"
+right = "as Required"
+[[checklists.items]]
+left = "Packs Transition"
+right = "Completed"
+[[checklists.items]]
+rmk = "Bleed air extraction from the APU is not permitted above 15,000 feet."
+[[checklists.items]]
+left = "Passenger Signs"
+right = "On"
+[[checklists.items]]
+left = "Thrust reversers"
+right = "armed"
+[[checklists.items]]
+left = "CAS"
+right = "Checked"
+
+[[checklists]]
+name = "before landing checklist"
+type = "RD[PM]"
+[[checklists.items]]
+rmk = "Pilot Flying calls for the checklist after gear down and final flaps have been selected."
+[[checklists.items]]
+left = "Continuous Ignition"
+right = "On"
+[[checklists.items]]
+left = "Gear"
+right = "Down"
+[[checklists.items]]
+left = "Nose Steer"
+right = "Armed"
+[[checklists.items]]
+left = "A/SKID"
+right = "Armed/TEST"
+[[checklists.items]]
+left = "Spoilers"
+right = "Stowed/Auto"
+[[checklists.items]]
+left = "Flaps"
+right = "Set"
+[[checklists.items]]
+left = "CAS"
+right = "checked"
+[[checklists.items]]
+rmk = "If using ATS, place physical throttle at IDLE position in case of inadvertent thrust lever position out-of-sync during go-around."
+
+[[checklists]]
+name = "shutdown checklist"
+type = "CR"
+[[checklists.items]]
+left = "TAXI LIGHTS"
+right = "OFF"
+[[checklists.items]]
+left = "PARKING BRAKE"
+right = "SET"
+[[checklists.items]]
+left = "REVERSE THRUST"
+right = "STOWED"
+[[checklists.items]]
+left = "GEN 1 & GEN 2"
+right = "OFF"
+[[checklists.items]]
+left = "ENGINE 2"
+right = "SHUTDOWN"
+[[checklists.items]]
+left = "FUEL BOOST PUMPS"
+right = "OFF"
+[[checklists.items]]
+left = ">*< FUEL SYSTEM"
+right = "checked"
+[[checklists.items]]
+left = "ENGINE 1"
+right = "SHUTDOWN"
+[[checklists.items]]
+raw = "align(center)[VERIFY ITT BELOW $350 degree \"C\"$]"
+rmk = "VERIFY ITT BELOW 350 DEGREES"
+[[checklists.items]]
+left = "ANTI-ICE"
+right = "OFF"
+[[checklists.items]]
+left = "14TH STAGE"
+right = "OFF"
+[[checklists.items]]
+left = "BEACON"
+right = "OFF"
+[[checklists.items]]
+left = "NOSE STEER"
+right = "OFF"
+[[checklists.items]]
+left = "PASSENGER SIGNS"
+right = "OFF"
+[[checklists.items]]
+left = "CABIN DIFF PRESSURE"
+right = "0 PSI"
+
+[[checklists]]
+name = "securing checklist"
+type = "SF"
+columns = 2
+[[checklists.items]]
+left = "EMER LTS"
+right = "OFF"
+[[checklists.items]]
+left = "AC/DC UTILITY"
+right = "OFF / 3 MINS"
+[[checklists.items]]
+left = "THRUST REVERSERS"
+right = "OFF"
+[[checklists.items]]
+left = "CHOCKS"
+right = "INSTALL"
+[[checklists.items]]
+left = "PARKING BRAKE"
+right = "OFF"
+[[checklists.items]]
+left = "HYD PUMPS"
+right = "OFF"
+[[checklists.items]]
+left = "NAV & LOGO LIGHTS"
+right = "OFF"
+[[checklists.items]]
+left = "APU GEN"
+right = "OFF"
+[[checklists.items]]
+left = "APU START/STOP"
+right = "STOP"
+[[checklists.items]]
+left = "PACKS"
+right = "OFF"
+[[checklists.items]]
+left = "LCV / 10TH STAGE ISOL"
+right = "CLOSE"
+[[checklists.items]]
+left = "APU PWR FUEL"
+right = "OFF"
+[[checklists.items]]
+left = "EICAS APU GAUGE"
+right = "NOT DISPLAYED"
+[[checklists.items]]
+left = "BATT MASTER"
+right = "OFF"
+[[checklists.items]]
+left = "COCKPIT REFUEL PANEL"
+right = "OFF"
+[[checklists.items]]
+left = "SERVICE LIGHTS"
+right = "OFF"
+[[checklists.items]]
+left = "PINS / COVERS"
+right = "INSTALL"

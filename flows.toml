@@ -1,0 +1,545 @@
+[metadata]
+page = "N2"
+group = "Normal Flows"
+type = "normal"
+
+[[checklists]]
+name = "Cockpit safety check"
+type = "SF/RD"
+ [[checklists.items]]
+left = "CIRCUIT BRK / MDC SW"
+right = "CLOSE / OFF 1+2"
+ [[checklists.items]]
+left = "OVERHEAD SWITCHES"
+right = "OFF"
+ [[checklists.items]]
+left = "NOSE STEER"
+right = "OFF"
+ [[checklists.items]]
+left = "LDG GEAR LEVER"
+right = "DN"
+ [[checklists.items]]
+left = "FLT SPOILER LEVER"
+right = "RETRACT"
+ [[checklists.items]]
+left = "FLAPS LEVER / POSITION"
+right = "CHECK / MATCH"
+ [[checklists.items]]
+left = "LDG GEAR MANUAL RELEASE"
+right = "STOW"
+ [[checklists.items]]
+left = "ADG MANUAL RELEASE"
+right = "STOW"
+ [[checklists.items]]
+left = "ADG LAMP TEST"
+right = "CHECK"
+ [[checklists.items]]
+left = "LOGBOOK & A/C DOCS"
+right = "ON BOARD"
+ [[checklists.items]]
+left = "SAFETY EQUIPMENT"
+right = "CHECK"
+ [[checklists.items]]
+left = "EXTERNAL CHECK"
+right = "COMPLETE"
+
+
+[[checklists]]
+name = "Flight Crew Preflight"
+type = "SF/RD"
+ [[checklists.items]]
+left = "BATTERY MASTER"
+right = "ON"
+ [[checklists.items]]
+left = "BATTERY VOLTS"
+right = "MIN 22 VDC"
+ [[checklists.items]]
+left = ">*< FIREX MONITOR"
+right = "TEST"
+ [[checklists.items]]
+left = ">*< FIRE DETECT WARN & FAIL"
+right = "TEST"
+ [[checklists.items]]
+left = "APU"
+right = "START / AVAIL"
+ [[checklists.items]]
+left = "APU GEN"
+right = "ON"
+ [[checklists.items]]
+left = "AC & DC ELECTRICS"
+right = "CHECK"
+ [[checklists.items]]
+left = "NAV LIGHTS / LOGO LIGHT ON"
+right = "ON"
+ [[checklists.items]]
+left = "COCKPIT LIGHTS"
+right = "SET"
+ [[checklists.items]]
+left = ">*< LAMP TEST"
+right = "TEST"
+ [[checklists.items]]
+left = ">*< DUCT MONITOR"
+right = "TEST"
+ [[checklists.items]]
+left = "FMS DATABASE STATUS"
+right = "CYCLE / CHECK"
+ [[checklists.items]]
+left = "FMS FLIGHT PLAN UPLINK/ATIS "
+right = "INITIATE"
+ [[checklists.items]]
+left = "ANTI-SKID"
+right = "ARM / TEST"
+ [[checklists.items]]
+left = "NOSE DOOR"
+right = "CLEAR"
+ [[checklists.items]]
+left = "HYDRAULIC PUMP 3A"
+right = "ON"
+ [[checklists.items]]
+left = "BRAKE PRESS"
+right = "CHECK"
+ [[checklists.items]]
+left = "PARKING BRAKE"
+right = "SET"
+ [[checklists.items]]
+left = "NOSE DOOR"
+right = "CLOSE"
+ [[checklists.items]]
+left = "HYDRAULIC system"
+right = "CHECK/AUTO/3A ON"
+ [[checklists.items]]
+left = "ELECTRICAL POWER PANEL"
+right = "CHECK"
+ [[checklists.items]]
+left = "AC/DC UTILITY SWITCH"
+right = "ON"
+ [[checklists.items]]
+left = "START / IGN PANEL"
+right = "CHECK"
+ [[checklists.items]]
+left = "FUEL PANEL"
+right = "CHECK"
+ [[checklists.items]]
+left = "APU LCV"
+right = "OPEN"
+ [[checklists.items]]
+left = "10TH STAGE ISOL VALVE"
+right = "OPEN"
+ [[checklists.items]]
+left = "PACKS"
+right = "ON"
+ [[checklists.items]]
+left = "AIR CONDITIONING PANEL"
+right = "CHECK"
+ [[checklists.items]]
+left = "PRESSURIZATION PANEL"
+right = "CHECK / SET"
+ [[checklists.items]]
+left = "BLEED AIR PANEL"
+right = "CHECK"
+ [[checklists.items]]
+left = ">*< SUPP GND WING A/ICE SWITCHES"
+right = "OUT"
+ [[checklists.items]]
+left = ">*< COWL ANTI-ICE SWITCHES"
+right = "ON / OFF"
+ [[checklists.items]]
+left = "ANTI-ICE PANEL"
+right = "CHECK / TEST"
+[[checklists.items]]
+rmk = "Consider testing WSHLD/WIND after TO if OAT is high. See MEL."
+ [[checklists.items]]
+left = "EMER LIGHTS"
+right = "(>*< CHECK) / ARM"
+ [[checklists.items]]
+left = "PASSENGER SIGNS"
+right = "ON / AUTO"
+ [[checklists.items]]
+left = "ELT"
+right = "ARM"
+ [[checklists.items]]
+left = "GLARESHIELD PANEL"
+right = "CHECK"
+ [[checklists.items]]
+left = "CREW & PAX OXYGEN"
+right = "CHECK / ON"
+ [[checklists.items]]
+left = "DCU WARN PANEL"
+right = "CHECK"
+ [[checklists.items]]
+left = "CVR"
+right = "TEST"
+ [[checklists.items]]
+left = "AUDIO PANELS"
+right = "SET"
+ [[checklists.items]]
+left = ">*< SPS SYSTEM"
+right = "CHECK / (ON 1+2)"
+ [[checklists.items]]
+left = "INTEGRATED STBY INST"
+right = "CHECK / SET"
+ [[checklists.items]]
+left = "CLOCK"
+right = "RESET"
+ [[checklists.items]]
+left = "EFIS & EICAS"
+right = "CHECK"
+ [[checklists.items]]
+left = ">*< MLG BAY OVHT"
+right = "CHECK"
+ [[checklists.items]]
+left = "TAWS WARNING SWITCHES"
+right = "OUT / TEST"
+ [[checklists.items]]
+left = "PITCH & ROLL DISC"
+right = "IN / STOW"
+ [[checklists.items]]
+left = "GND SPOILERS"
+right = "AUTO"
+ [[checklists.items]]
+left = "THRUST REVERSERS"
+right = "CHECK / ARM"
+ [[checklists.items]]
+left = "THRUST LEVERS"
+right = "CHECK / SHUTOFF"
+ [[checklists.items]]
+left = "ENG SPEED SWITCHES"
+right = "ON"
+ [[checklists.items]]
+left = ">*< ENG VIB CHECK"
+right = "TEST"
+ [[checklists.items]]
+left = ">*< AURAL WARN"
+right = "CHECK"
+ [[checklists.items]]
+left = ">*< SMOKE DETECTOR"
+right = "TEST"
+ [[checklists.items]]
+left = "TRIMS (3) MACH TRIM"
+right = "(>*< TEST) / SET"
+ [[checklists.items]]
+left = "YAW DAMPERS"
+right = "ENGAGE"
+ [[checklists.items]]
+left = "REV / INHIBIT SWITCHES"
+right = "NORM / OUT"
+ [[checklists.items]]
+left = "IRS (3)"
+right = "ALIGN"
+ [[checklists.items]]
+left = "CPDLC"
+right = "LOGON"
+ [[checklists.items]]
+left = ">*< TCAS"
+right = "TEST"
+
+[[checklists]]
+name = "Flight Deck Final Pre-flight"
+type = "SF/RD"
+[checkclists.items]
+rmk = "BOTH PILOTS ARE REQUIRED FOR THE FOLLOWING ITEMS"
+[[checklists.items]]
+left = "ATIS & CLEARANCE"
+right = "COPY"
+[[checklists.items]]
+left = "FMS FLT PLN / WIND / PERF"
+right = "PROGRAM"
+[[checklists.items]]
+left = "TAKEOFF DATA"
+right = "SET"
+[[checklists.items]]
+left = "AVIONICS / CHARTS"
+right = "SET"
+[[checklists.items]]
+left = "FLIGHT INSTRUMENTS"
+right = "CHECK / SET"
+[[checklists.items]]
+rmk = "Perform a logical check of the instruments, navigation source, speeds, flight directors, and thrust ratings. Should be read aloud as an introduction to the departure briefing."
+[[checklists.items]]
+left = "DEPARTURE BRIEFING"
+right = "COMPLETE"
+[[checklists.items]]
+left = "EMERGENCY PROCEDURES"
+right = "REVIEW"
+[[checklists.items]]
+left = "PINS / COVERS / CHOCKS"
+right = "REMOVE"
+[[checklists.items]]
+left = "CABIN LTS / WATER HTRS / MSTR SEAT"
+right = "SET"
+
+[[checklists]]
+name = "Engine Start"
+type = "SF[F]"
+[[checklists.items]]
+left = "Beacon"
+right = "On"
+[[checklists.items]]
+left = "Fuel Booster Pumps"
+right = "On"
+[[checklists.items]]
+left = "Ignition A/B"
+right = "Arm"
+[[checklists.items]]
+rmk = "A for odd & B for even UTC days of the month"
+[[checklists.items]]
+left = "Engine 2"
+right = " Start"
+[[checklists.items]]
+left = ">*< Fuel Booster Pump"
+right = "Test"
+[[checklists.items]]
+left = "Engine 1"
+right = " Start"
+[[checklists.items]]
+rmk = "FO does not need to announce any engine parameters when starting engine unless the parameter is suspected to exceed the system limit."
+
+[[checklists]]
+name = "After Start"
+type = "SF[C]"
+[[checklists.items]]
+rmk = "Captain initiates AFTER START flows by announcing \"Flaps 20, AFTER START\" or \"Hold for Flaps, AFTER START\" for De-Ice."
+[[checklists.items]]
+left = "Gen 1 & 2"
+right = "On"
+[[checklists.items]]
+left = "Ignition"
+right = "Disarm"
+[[checklists.items]]
+left = "Flight Controls"
+right = "Check"
+[[checklists.items]]
+left = "GND and FLT Spoilers"
+right = "Check/Auto/Stow"
+[[checklists.items]]
+left = "Nose steer"
+right = "Arm"
+[[checklists.items]]
+left = "APR"
+right = "ARM/TEST"
+[[checklists.items]]
+left = "ADG UNIT"
+right = "TEST"
+
+[[checklists]]
+name = "After Start"
+type = "SF[F]"
+[[checklists.items]]
+left = "Flaps"
+right = "20 (When directed)"
+[[checklists.items]]
+left = "Packs"
+right = "ON"
+[[checklists.items]]
+rmk = "Perform ANTI-ICE SYSTEM TEST if needed."
+[[checklists.items]]
+left = "Trims"
+right = "3 set for T/O"
+[[checklists.items]]
+left = "Fuel quantity & Balance"
+right = "Check"
+[[checklists.items]]
+rmk = " Maximum imbalance: 363KG/800LBS in flight, 182KG/400LBS for taxi, takeoff and landing"
+[[checklists.items]]
+left = "ATC/TCAS"
+right = "TA/RA"
+
+[[checklists]]
+name = ">*< Anti-ice system test"
+type = "SF"
+[[checklists.items]]
+left = "COWL ANTI-ICE"
+right = "ON / CHECK 45 SECS"
+[[checklists.items]]
+left = "COWL ANTI-ICE"
+right = "CHECK GREEN CAS ADVISORY"
+[[checklists.items]]
+left = "SUPP GND WING"
+right = "ANTI-ICE TEST ON"
+[[checklists.items]]
+left = "SUPP GND WING ANTI-ICE"
+right = "TEST OK / OFF"
+[[checklists.items]]
+left = "COWL ANTI-ICE"
+right = "OFF"
+[[checklists.items]]
+left = "WING ANTI-ICE"
+right = "NORM"
+[[checklists.items]]
+left = "14TH STAGE ISOL VALVE"
+right = "CHECK"
+[[checklists.items]]
+left = "WING ANTI-ICE"
+right = "CHECK / OFF"
+
+[[checklists]]
+name = "Taxi"
+type = "SF[C]"
+[[checklists.items]]
+left = "TAXI lights"
+right = "On"
+[[checklists.items]]
+left = "Brakes & Steering"
+right = "Check"
+[[checklists.items]]
+left = "thrust reversers"
+right = "check"
+[[checklists.items]]
+left = "Wing & Cowl Anti-Ice"
+right = "AS RQRD"
+
+
+[[checklists]]
+name = "Before Take-off"
+type = "SF[C]"
+[[checklists.items]]
+left = "continuous ignition"
+right = "on"
+[[checklists.items]]
+left = "CAS T-O Config OK"
+right = "Check"
+[[checklists.items]]
+rmk = "Don't forget to release parking brakes."
+[[checklists.items]]
+raw = """align(left)[Verify the following for the EFIS/ATS/EICAS:
+- Preset HDG
+- Speed target (VFTO/AS RQRD)
+- FMA active (TO/TO) and armed [LNAV/VNAV]
+- Preset ALT
+- ATS mode and N1 target, and
+- T/O Config OK]"""
+rmk = """Verify the following for the EFIS/ATS/EICAS:
+- Preset HDG
+- Speed target (VFTO/AS RQRD)
+- FMA active (TO/TO) and armed [LNAV/VNAV]
+- Preset ALT
+- ATS mode and N1 target, and
+- T/O Config OK"""
+[[checklists.items]]
+left = "LDG/Pulse/Recog/ACOLL LTS"
+right = "As required"
+
+[[checklists]]
+name = "Before Take-off"
+type = "SF[F]"
+[[checklists.items]]
+rmk = "when cleared to line-up"
+[[checklists.items]]
+left = "Windshield heat"
+right = "LO/HI"
+[[checklists.items]]
+left = "Probes"
+right = "On"
+[[checklists.items]]
+left = "CAS T-O Config OK"
+right = "Check"
+
+[[checklists]]
+name = "Descend"
+type = "F[ALL]"
+[[checklists.items]]
+rmk = "DESCEND flow should be completed by ALL flight crew members before reaching TOD."
+[[checklists.items]]
+left = "Shoulder Harness"
+right = "Secure"
+[[checklists.items]]
+left = "Passenger Signs"
+right = "Auto/On"
+[[checklists.items]]
+left = "Pressurization"
+right = "Set LDG field elev"
+[[checklists.items]]
+left = "Fuel Quantity & Balance"
+right = "Check"
+[[checklists.items]]
+left = "FMS/Landing Data/Charts"
+right = "Set/Checked"
+[[checklists.items]]
+left = "Transition Level"
+right = "Review/Set"
+[[checklists.items]]
+left = "thrust reversers"
+right = "Arm"
+[[checklists.items]]
+left = "Arrival Briefing"
+right = "Completed"
+
+[[checklists]]
+name = "after landing"
+type = "SF[C]"
+[[checklists.items]]
+rmk = "Captain assumes PF role before 60kt for ground ops after vacating active runway."
+[[checklists.items]]
+left = "ldg, pulse, Recog lights"
+right = "Off"
+
+[[checklists]]
+name = "after landing"
+type = "SF[F]"
+[[checklists.items]]
+rmk = "First officer does not announce flow pattern items nor the completion of the flow. First officer's primary objective is to assist captain's taxi on the ground."
+[[checklists.items]]
+left = "RADAR"
+right = "off"
+[[checklists.items]]
+left = "Flaps"
+right = "retract"
+[[checklists.items]]
+left = "Spoilers"
+right = "stowed"
+[[checklists.items]]
+left = "Anti-collision lights"
+right = "off"
+[[checklists.items]]
+left = "ignition"
+right = "off"
+[[checklists.items]]
+left = "Windshield heat"
+right = "off"
+[[checklists.items]]
+left = "Probes"
+right = "off"
+[[checklists.items]]
+left = "Wing anti-ice"
+right = "off"
+[[checklists.items]]
+left = "Cowl anti-ice"
+right = "as rqrd"
+[[checklists.items]]
+left = "ATC/TCAS"
+right = "AS RQRD"
+[[checklists.items]]
+left = "radar"
+right = "stby"
+
+[[checklists]]
+name = "Go Around"
+type = "F[PF]"
+[[checklists.items]]
+rmk = "Any pilot may initiate the go around flow by announcing \"go around,\" after which PF must execute this flow immediately."
+[[checklists.items]]
+rmk = "CAUTION: If unreliable airspeed is suspected, disregard all reference to TOGA and airspeed. Do not use TOGA switch."
+[[checklists.items]]
+left = "thrust levers"
+right = "advance"
+[[checklists.items]]
+rmk = "to the pre-determined go-around N1 setting, while simultaneously pressing the TOGA switch and ATS DISC switch."
+[[checklists.items]]
+left = "flight spoilers"
+right = "retract"
+[[checklists.items]]
+left = "pitch attitude"
+right = "adjust"
+[[checklists.items]]
+rmk = "smoothly rotate at no less than Vref, and then adjust to no less than V2 + 10 KIAS as flaps are retracted to 20"
+[[checklists.items]]
+left = "flaps 20"
+right = "announce"
+[[checklists.items]]
+left = "gear up"
+right = "announce"
+[[checklists.items]]
+left = "flaps up (MIN 400ft AGL)"
+right = "announce"
+[[checklists.items]]
+rmk = "IMMEDIATE RETURN/AFTER TAKE-OFF CHECKLIST NEXT"
