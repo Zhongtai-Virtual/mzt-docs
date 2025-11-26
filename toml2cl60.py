@@ -5,13 +5,13 @@ import textwrap
 
 metadata=[]
 groups=[]
-with open("/home/weitcis/Code/MZT/checklist.toml", "rb") as f:
+with open("./checklist.toml", "rb") as f:
     data = tomllib.load(f)
     groups.append(data)
-with open("/home/weitcis/Code/MZT/flows.toml", "rb") as f:
+with open("./flows.toml", "rb") as f:
     data = tomllib.load(f)
     groups.append(data)
-with open("/home/weitcis/Code/MZT/meta.toml", "rb") as f:
+with open("./meta.toml", "rb") as f:
     metadata = tomllib.load(f)
 
 root = ET.Element("checklists")
