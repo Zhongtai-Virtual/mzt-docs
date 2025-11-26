@@ -78,7 +78,8 @@
       {
         let col = if "columns" in checklist { checklist.columns } else {1}
         show: columns.with(col)
-        for (i, item) in checklist.items.enumerate(start: 1) {
+        let cc = counter(checklist.name + checklist.type + "_steps")
+        for item in checklist.items {
           if "raw" in item {
             eval(item.raw)
           } else if "rmk" in item {
@@ -87,17 +88,19 @@
               #item.rmk
             ]
           } else {
+            cc.step()
             let capitalize = if "capitalize" in item {
               item.capitalize
             } else {
               true
             }
             context {
-              strfmt("{:2}. ", i) + step(item.left, item.right, capitalize: capitalize)
+              strfmt("{:2}. ", cc.get().at(0)) 
+              step(item.left, item.right, capitalize: capitalize)
             }
           }
           context {
-            if col != 1 and i == calc.ceil(checklist.items.len() / col) {
+            if cc.get().at(0) == calc.ceil(checklist.items.len() / col) {
               colbreak()
             }
           }
