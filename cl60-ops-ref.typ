@@ -69,9 +69,9 @@ Contamination by even small amounts of frost, ice, or snow can lead to a signifi
 - Single-engine taxiing in icing conditions is not authorized.
 - Any contamination on the aircraft must be removed by de-icing treatment before take-off.
 - Cowl Anti-Ice must be selected ON during taxi in any icing conditions.
-- When the aircraft has not been treated with anti-ice fluid, the Wing Anti-Ice must be selected NORM during the final stages of taxi when $"OAT" < 5 degree upright(C)$ *regardless* of icing conditions, until a green "WING A/ICE ON" message is shown on the CAS. If not required for take-off it can then be selected OFF.
+- When the aircraft has not been treated with anti-ice fluid, the Wing Anti-Ice must be selected NORM during the final stages of taxi when $"OAT" <= 5 degree upright(C)$ *regardless* of icing conditions, until a green "WING A/ICE ON" message is shown on the CAS. If not required for take-off it can then be selected OFF.
 - Wing Anti-Ice must be selected NORM for take-off when 
-  - $"OAT" < 5 degree upright(C)$, and
+  - $"OAT" <= 5 degree upright(C)$, and
   - there is:
     - visible moisture in any form is present below 400 ft, or
     - wet/contaminated runway, or
