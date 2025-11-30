@@ -95,9 +95,9 @@
               true
             }
             context {
-              strfmt("{:2}. ", cc.get().at(0)) 
-              step(item.left, item.right, capitalize: capitalize)
+              strfmt("{:2}. ", cc.get().at(0)) + step(item.left, item.right, capitalize: capitalize)
             }
+            linebreak()
           }
           context {
             if cc.get().at(0) == calc.ceil(checklist.items.len() / col) {
