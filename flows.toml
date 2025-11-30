@@ -531,7 +531,8 @@ right = "retract"
 left = "pitch attitude"
 right = "adjust"
 [[checklists.items]]
-rmk = "smoothly rotate at no less than Vref, and then adjust to no less than V2 + 10 KIAS as flaps are retracted to 20"
+raw = "align(center)[Smoothly rotate at no less than Vref, and then adjust to no less than V#sub[ac] + 10 KIAS as flaps are retracted to 20.]"
+rmk = "Smoothly rotate at no less than Vref, and then adjust to no less than Vac + 10 KIAS as flaps are retracted to 20."
 [[checklists.items]]
 left = "flaps 20"
 right = "announce"
