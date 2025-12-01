@@ -1,5 +1,44 @@
-#import "typst-checklist-mzt/template/template.typ": *
 #import "@preview/oxifmt:1.0.0": strfmt
+
+// inspired by https://github.com/TomVer99/Typst-checklist-template
+#let section(
+  title,
+  body,
+) = table(
+  stroke: none,
+  table.header(
+    box(width: 100%, inset: 0.2em)[
+      #set text(size: 12pt)
+      #align(center)[#upper(strong(title))]
+    ]
+  ),
+  body
+)
+
+// inspired by https://github.com/TomVer99/Typst-checklist-template
+#let step(a, b, bold: false, capitalize: true) = {
+  let ret = if ((a != none and a != "") or (b != none and b != "")) {
+    if bold {
+      strong(a)
+    } else {
+      a
+    }
+    " "
+    box(width: 1fr, repeat[.])
+    " "
+    if bold {
+      strong(b)
+    } else {
+      b
+    }
+  }
+
+  if (capitalize) {
+    upper(ret)
+  } else {
+    ret
+  }
+}
 
 #let page-header(title, page) = {
   let meta = toml("meta.toml")
@@ -66,7 +105,6 @@
 }
 
 #let render-checklist(config) = for checklist in config.checklists {
-  style-state.update(1)
   let wrapper = if checklist.items.len() < 20 {
     box
   } else {
