@@ -1,6 +1,6 @@
 #import "@preview/oxifmt:1.0.0": strfmt
 
-// inspired by https://github.com/TomVer99/Typst-checklist-template
+// modified from https://github.com/TomVer99/Typst-checklist-template
 #let section(
   title,
   body,
@@ -15,7 +15,7 @@
   body
 )
 
-// inspired by https://github.com/TomVer99/Typst-checklist-template
+// modified from https://github.com/TomVer99/Typst-checklist-template
 #let step(a, b, bold: false, capitalize: true) = {
   let ret = if ((a != none and a != "") or (b != none and b != "")) {
     if bold {
@@ -81,6 +81,7 @@
 #let page-template(content) = {
   let meta = toml("meta.toml")
   let mcolor = meta.metadata.color
+  let color = color.rgb(mcolor)
   let revision = meta.metadata.date
 
   set text(font: "Sarasa Fixed CL")
@@ -93,11 +94,11 @@
     margin: (top: 0.2in, bottom: 0.2in, left: 0.2in, right: 0.2in),
     paper: "us-letter",
     flipped: true,
-    footer: box(width: 1fr, rect(width: 100%, fill: color.rgb(mcolor))),
-    header: box(width: 1fr, rect(width: 100%, fill: color.rgb(mcolor)))
+    background: rect(width: 100%, height: 100%, outset: -2mm, stroke: color+1mm)
   )
 
-  show "_": "___"
+  show link: set text(fill: blue)
+  show "_": box(width: 2em, repeat("_", gap: -1mm))
   show ">*<": "►☼◄"
   show "1+2": "①+②"
 

@@ -5,7 +5,6 @@
 
 #set text(size: 10pt)
 #set par(spacing: 1em, leading: 0.5em, justify: true)
-#show link: set text(fill: blue)
 #let two_ref = (
   [6], [1.48], [1.67], [1.88], [1.56], [1.76], [1.98],
   [5], [2.03], [2.23], [2.43], [2.19], [2.41], [2.63],
