@@ -479,8 +479,8 @@ type = "SF[F]"
 [[checklists.items]]
 rmk = "First officer does not announce flow pattern items nor the completion of the flow. First officer's primary objective is to assist captain's taxi on the ground."
 [[checklists.items]]
-left = "RADAR"
-right = "off"
+left = "radar"
+right = "stby"
 [[checklists.items]]
 left = "Flaps"
 right = "retract"
@@ -508,9 +508,6 @@ right = "as rqrd"
 [[checklists.items]]
 left = "ATC/TCAS"
 right = "AS RQRD"
-[[checklists.items]]
-left = "radar"
-right = "stby"
 
 [[checklists]]
 name = "Go Around"

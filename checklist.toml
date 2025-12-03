@@ -157,10 +157,10 @@ rmk = "Go to BEFORE LANDING CHECKLIST"
 name = "Descend checklist"
 type = "RD[PM]"
 [[checklists.items]]
-rmk = "Pilot Flying calls for the checklist\nbefore reaching 10,000ft, or\n as appropriate for high altitude operations."
+rmk = "Pilot Flying calls for the checklist when reaching 20,000ft.\nAPU in-flight start is guaranteed and authorized only under 20,000ft."
 [[checklists.items]]
 left = "N1 TGT"
-right = "91 Set"
+right = "TO"
 [[checklists.items]]
 left = "APU"
 right = "Start" 
