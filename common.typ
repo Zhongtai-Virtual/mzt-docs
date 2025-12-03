@@ -101,6 +101,10 @@
   show "_": box(width: 2em, repeat("_", gap: -1mm))
   show ">*<": "►☼◄"
   show "1+2": "①+②"
+  show "must": set text(weight: "bold")
+  show "regardless": set text(weight: "bold")
+  show "whenever": set text(weight: "bold")
+  set math.frac(style: "skewed")
 
   content
 }
