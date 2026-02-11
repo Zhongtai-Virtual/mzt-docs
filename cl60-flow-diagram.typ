@@ -15,8 +15,8 @@
     .map(it => if "diag-pos" in it { it.at("diag-pos") } else {()})
     .enumerate(start: 1)
 }
-#let get-lines(checklist) = {
-  checklist
+#let get-lines(pos-list) = {
+  pos-list
     .filter(it => it.at(1).len() == 2)
     .map(it => it.at(0))
     .windows(2)
