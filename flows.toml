@@ -244,9 +244,7 @@ right = "TEST"
 
 [[checklists]]
 name = "Flight Deck Final Pre-flight"
-type = "SF/RD"
-[[checklists.items]]
-rmk = "BOTH PILOTS ARE REQUIRED FOR THE FOLLOWING ITEMS"
+type = "SF/RD[ALL]"
 [[checklists.items]]
 left = "ATIS & CLEARANCE"
 right = "COPY"
@@ -594,12 +592,12 @@ left = "pitch attitude"
 right = "adjust"
 [[checklists.items]]
 raw = "align(center)[Do not retract flaps before V#sub[ac] + 10 KIAS.]"
-rmk = "Do not retract flaps before Vac + 10 KIAS."
+rmk = "Do not retract flaps before Vac + 10 KIAS"
 [[checklists.items]]
 left = "flight level change"
 right = "announce"
 [[checklists.items]]
-rmk = "Consider to engage ATS"
+rmk = "Consider to re-engage automation"
 [[checklists.items]]
 left = "Clean up"
 right = "as required"
@@ -629,6 +627,8 @@ right = "Press"
 [[checklists.items]]
 left = "pitch attitude"
 right = "adjust"
+[[checklists.items]]
+rmk = "Consider to use FD Sync"
 [[checklists.items]]
 left = "autopilot"
 right = "engage"
