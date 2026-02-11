@@ -6,36 +6,45 @@ type = "normal"
 [[checklists]]
 name = "Cockpit safety check"
 type = "SF/RD"
+diag-pos = [26, 17]
  [[checklists.items]]
 left = "CIRCUIT BRK / MDC SW"
 right = "CLOSE / OFF 1+2"
  [[checklists.items]]
 left = "OVERHEAD SWITCHES"
 right = "OFF"
+diag-pos = [50, 73]
  [[checklists.items]]
 left = "NOSE STEER"
 right = "OFF"
+diag-pos = [48, 39]
  [[checklists.items]]
 left = "LDG GEAR LEVER"
 right = "DN"
+diag-pos = [51.5, 38.5]
  [[checklists.items]]
 left = "FLT SPOILER LEVER"
 right = "RETRACT"
+diag-pos = [46, 31]
  [[checklists.items]]
 left = "FLAPS LEVER / POSITION"
 right = "CHECK / MATCH"
+diag-pos = [57, 27.5]
  [[checklists.items]]
 left = "LDG GEAR MANUAL RELEASE"
 right = "STOW"
+diag-pos = [49, 1]
  [[checklists.items]]
 left = "ADG MANUAL RELEASE"
 right = "STOW"
+diag-pos = [52, 1]
  [[checklists.items]]
 left = "ADG LAMP TEST"
 right = "CHECK"
+diag-pos = [53.5, 2]
  [[checklists.items]]
-left = "LOGBOOK & A/C DOCS"
-right = "ON BOARD"
+left = "LOGBOOK / DOCS"
+right = "ON BOARD / VERIFIED"
  [[checklists.items]]
 left = "SAFETY EQUIPMENT"
 right = "CHECK"
@@ -236,7 +245,7 @@ right = "TEST"
 [[checklists]]
 name = "Flight Deck Final Pre-flight"
 type = "SF/RD"
-[checkclists.items]
+[[checklists.items]]
 rmk = "BOTH PILOTS ARE REQUIRED FOR THE FOLLOWING ITEMS"
 [[checklists.items]]
 left = "ATIS & CLEARANCE"
@@ -271,137 +280,182 @@ right = "SET"
 [[checklists]]
 name = "Engine Start"
 type = "SF[F]"
+diag-pos = [77, 18]
 [[checklists.items]]
 left = "Beacon"
 right = "On"
+diag-pos = [43, 68]
 [[checklists.items]]
 left = "Fuel Booster Pumps"
 right = "On"
+diag-pos = [51, 75.5]
 [[checklists.items]]
 left = "Ignition A/B"
 right = "Arm"
+diag-pos = [51, 77.5]
 [[checklists.items]]
 rmk = "A for odd & B for even UTC days of the month"
 [[checklists.items]]
 left = "Engine 2"
 right = " Start"
+diag-pos = [49.5, 78.5]
 [[checklists.items]]
 left = ">*< Fuel Booster Pump"
 right = "Test"
+#diag-pos = [49, 75.5]
 [[checklists.items]]
 left = "Engine 1"
 right = " Start"
+#diag-pos = [48, 78.5]
 [[checklists.items]]
-rmk = "FO does not need to announce any engine parameters when starting engine unless the parameter is suspected to exceed the system limit."
+rmk = "FO does not need to announce any engine parameters during the start unless they are suspected to exceed the system limit."
 
 [[checklists]]
 name = "After Start"
 type = "SF[C]"
+diag-pos = [26, 15.75]
 [[checklists.items]]
 rmk = "Captain initiates AFTER START flows by announcing \"Flaps 20, AFTER START\" or \"Hold for Flaps, AFTER START\" for De-Ice."
 [[checklists.items]]
 left = "Gen 1 & 2"
 right = "On"
+diag-pos = [44, 77]
 [[checklists.items]]
 left = "Ignition"
 right = "Disarm"
-[[checklists.items]]
-left = "Flight Controls"
-right = "Check"
-[[checklists.items]]
-left = "GND and FLT Spoilers"
-right = "Check/Auto/Stow"
+diag-pos = [50, 78]
 [[checklists.items]]
 left = "Nose steer"
 right = "Arm"
+diag-pos = [48, 39]
+[[checklists.items]]
+left = "GND and FLT Spoilers"
+right = "Check/Auto/Stow"
+diag-pos = [46, 29]
 [[checklists.items]]
 left = "APR"
 right = "ARM/TEST"
+diag-pos = [49, 21]
 [[checklists.items]]
 left = "ADG UNIT"
 right = "TEST"
+diag-pos = [53, 2]
+[[checklists.items]]
+left = "Flight Controls"
+right = "Check"
+diag-pos = [32, 34]
 
 [[checklists]]
 name = "After Start"
 type = "SF[F]"
+diag-pos = [78, 15.75]
 [[checklists.items]]
 left = "Flaps"
 right = "20 (When directed)"
-[[checklists.items]]
-left = "Packs"
-right = "ON"
-[[checklists.items]]
-rmk = "Perform ANTI-ICE SYSTEM TEST if needed."
-[[checklists.items]]
-left = "Trims"
-right = "3 set for T/O"
-[[checklists.items]]
-left = "Fuel quantity & Balance"
-right = "Check"
-[[checklists.items]]
-rmk = " Maximum imbalance: 363KG/800LBS in flight, 182KG/400LBS for taxi, takeoff and landing"
+diag-pos = [57, 27]
 [[checklists.items]]
 left = "ATC/TCAS"
 right = "TA/RA"
+diag-pos = [58, 15]
+[[checklists.items]]
+left = "Fuel quantity & Balance"
+right = "Check"
+diag-pos = [40, 47]
+[[checklists.items]]
+rmk = " Maximum imbalance: 363KG/800LBS in flight, 182KG/400LBS for taxi, takeoff and landing"
+[[checklists.items]]
+left = "Trims"
+right = "3 set for T/O"
+diag-pos = [43, 51]
+[[checklists.items]]
+left = "Packs"
+right = "ON"
+diag-pos = [50, 70]
+[[checklists.items]]
+left = "14TH Stage"
+right = "OPEN"
+diag-pos = [57, 73]
+[[checklists.items]]
+rmk = "Perform ANTI-ICE SYSTEM TEST if needed."
 
 [[checklists]]
 name = ">*< Anti-ice system test"
 type = "SF"
+diag-pos = [78, 15.75]
 [[checklists.items]]
 left = "COWL ANTI-ICE"
 right = "ON / CHECK 45 SECS"
+diag-pos = [58, 70]
 [[checklists.items]]
 left = "COWL ANTI-ICE"
-right = "CHECK GREEN CAS ADVISORY"
+right = "CHECK GREEN ADVISORY"
+diag-pos = [45, 48]
 [[checklists.items]]
 left = "SUPP GND WING"
 right = "ANTI-ICE TEST ON"
+diag-pos = [48, 43]
 [[checklists.items]]
 left = "SUPP GND WING ANTI-ICE"
 right = "TEST OK / OFF"
+#diag-pos = [49, 44]
 [[checklists.items]]
 left = "COWL ANTI-ICE"
 right = "OFF"
+#diag-pos = [57, 70]
 [[checklists.items]]
 left = "WING ANTI-ICE"
 right = "NORM"
+diag-pos = [54, 69.5]
 [[checklists.items]]
 left = "14TH STAGE ISOL VALVE"
 right = "CHECK"
+diag-pos = [57, 73]
 [[checklists.items]]
 left = "WING ANTI-ICE"
 right = "CHECK / OFF"
+#diag-pos = [54, 71]
 
 [[checklists]]
 name = "Taxi"
 type = "SF[C]"
+diag-pos = [27.5, 15.75]
 [[checklists.items]]
 left = "TAXI lights"
 right = "On"
+diag-pos = [46, 64]
 [[checklists.items]]
 left = "Brakes & Steering"
 right = "Check"
+diag-pos = [11.5, 36]
 [[checklists.items]]
 left = "thrust reversers"
 right = "check"
+diag-pos = [50, 30]
 [[checklists.items]]
 left = "Wing & Cowl Anti-Ice"
 right = "AS RQRD"
-
+diag-pos = [56, 70]
 
 [[checklists]]
 name = "Before Take-off"
 type = "SF[C]"
+diag-pos = [27.5, 18]
 [[checklists.items]]
 left = "continuous ignition"
 right = "on"
+diag-pos = [52, 78]
 [[checklists.items]]
 left = "CAS T-O Config OK"
 right = "Check"
+diag-pos = [45, 50]
 [[checklists.items]]
 rmk = "Don't forget to release parking brakes."
 [[checklists.items]]
-raw = """align(left)[Verify the following for the EFIS/ATS/EICAS:
+left = "EFIS/ATS/EICAS"
+right = "Check"
+diag-pos = [31, 50]
+[[checklists.items]]
+raw = """align(left)[Verify the following items:
 - Preset HDG
 - Speed target (VFTO/AS RQRD)
 - FMA active (TO/TO) and armed [LNAV/VNAV]
@@ -418,21 +472,26 @@ rmk = """Verify the following for the EFIS/ATS/EICAS:
 [[checklists.items]]
 left = "LDG/Pulse/Recog/ACOLL LTS"
 right = "As required"
+diag-pos = [43, 64]
 
 [[checklists]]
 name = "Before Take-off"
 type = "SF[F]"
+diag-pos = [78, 15.75]
 [[checklists.items]]
 rmk = "when cleared to line-up"
 [[checklists.items]]
 left = "Windshield heat"
 right = "LO/HI"
+diag-pos = [55, 68]
 [[checklists.items]]
 left = "Probes"
 right = "On"
+diag-pos = [58, 68]
 [[checklists.items]]
 left = "CAS T-O Config OK"
 right = "Check"
+diag-pos = [45, 48]
 
 [[checklists]]
 name = "Descend"
@@ -514,30 +573,70 @@ name = "Go Around"
 type = "F[PF]"
 [[checklists.items]]
 rmk = "Any pilot may initiate the go around flow by announcing \"go around,\" after which PF must execute this flow immediately."
+#[[checklists.items]]
+#rmk = "CAUTION: If unreliable airspeed is suspected, disregard all reference to TOGA and airspeed. Do not use TOGA switch."
 [[checklists.items]]
-rmk = "CAUTION: If unreliable airspeed is suspected, disregard all reference to TOGA and airspeed. Do not use TOGA switch."
+left = "TOGA switch"
+right = "press"
+[[checklists.items]]
+left = "ATS DISC switch"
+right = "press"
 [[checklists.items]]
 left = "thrust levers"
 right = "advance"
-[[checklists.items]]
-rmk = "to the pre-determined go-around N1 setting, while simultaneously pressing the TOGA switch and ATS DISC switch."
-[[checklists.items]]
-left = "flight spoilers"
-right = "retract"
+#[[checklists.items]]
+#rmk = "to the pre-determined go-around N1 setting, while simultaneously pressing the TOGA switch and ATS DISC switch. Consider engaging ATS to trim thrust lever position"
+#[[checklists.items]]
+#left = "flight spoilers"
+#right = "retract"
 [[checklists.items]]
 left = "pitch attitude"
 right = "adjust"
 [[checklists.items]]
-raw = "align(center)[Smoothly rotate at no less than Vref, and then adjust to no less than V#sub[ac] + 10 KIAS as flaps are retracted to 20.]"
-rmk = "Smoothly rotate at no less than Vref, and then adjust to no less than Vac + 10 KIAS as flaps are retracted to 20."
+raw = "align(center)[Do not retract flaps before V#sub[ac] + 10 KIAS.]"
+rmk = "Do not retract flaps before Vac + 10 KIAS."
 [[checklists.items]]
-left = "flaps 20"
+left = "flight level change"
 right = "announce"
 [[checklists.items]]
-left = "gear up"
-right = "announce"
+rmk = "Consider to engage ATS"
 [[checklists.items]]
-left = "flaps up (MIN 400ft AGL)"
-right = "announce"
+left = "Clean up"
+right = "as required"
+#[[checklists.items]]
+#left = "flaps 20"
+#right = "announce"
+#[[checklists.items]]
+#left = "gear up"
+#right = "announce"
+#[[checklists.items]]
+#left = "flaps up (MIN 400ft AGL)"
+#right = "announce"
+[[checklists.items]]
+rmk = "IMMEDIATE RETURN/AFTER TAKE-OFF CHECKLIST NEXT"
+
+[[checklists]]
+name = "Discontinued Approach"
+type = "F[PF]"
+[[checklists.items]]
+rmk = "This flow may be applied for cancelling approach above the preselected altitude. The PF initiates this flow by announcing \"cancel approach.\""
+[[checklists.items]]
+left = "Preselect Altitude"
+right = "Set [PM]"
+[[checklists.items]]
+left = "TOGA Switch"
+right = "Press"
+[[checklists.items]]
+left = "pitch attitude"
+right = "adjust"
+[[checklists.items]]
+left = "autopilot"
+right = "engage"
+[[checklists.items]]
+left = "Guidance Mode"
+right = "Set as required"
+[[checklists.items]]
+left = "Clean up"
+right = "as required"
 [[checklists.items]]
 rmk = "IMMEDIATE RETURN/AFTER TAKE-OFF CHECKLIST NEXT"

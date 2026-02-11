@@ -1,3 +1,4 @@
+#import "common.typ": *
 #set text(font: "Sarasa Fixed CL", size: 8pt)
 #show math.equation: set text(font: ("Sarasa Fixed CL", "Fira Math"), weight: "regular")
 
@@ -5,43 +6,10 @@
 #let mcolor = meta.metadata.color
 #let revision = meta.metadata.date
 
-#set page(
-  margin: (top: 0.2in, bottom: 0.2in, left: 0.2in, right: 0.2in),
-  paper: "us-letter",
-  flipped: true,
-  footer: box(width: 1fr, rect(width: 100%, fill: color.rgb(mcolor))),
-  header: box(width: 1fr, rect(width: 100%, fill: color.rgb(mcolor)))
-)
+#show: page-template
+#page-header("BRIEFING", "N3")
 
 #show grid.cell: it => align(center+horizon, it)
-
-#stack(dir: ttb,
-  grid(
-    columns: (25%, 55%, 20%),
-    rows: (6mm, 6mm),
-    grid.cell(rowspan: 2)[
-      #box(inset: 2mm)[
-        #set par(leading: 0.5em)
-        #set text(size: 10pt, weight: "bold")
-        Challenger 650\ 
-        #set text(size: 8pt)
-        Zhongtai Virtual
-      ]
-    ],
-    grid.cell(rowspan: 2)[
-      #set text(weight: "bold")
-      BRIEFING
-    ],
-    [
-      #set text(size: 16pt, weight: "bold")
-      N3
-    ],
-    [
-      #set text(size: 8pt)
-      #revision
-    ]
-  ),
-)
 
 #show: columns.with(2)
 #{  

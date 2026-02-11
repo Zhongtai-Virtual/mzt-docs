@@ -4,4 +4,4 @@
 #set par(leading: 1em)
 #page-header-from-config(config)
 #show: columns.with(2)
-#render-checklist(config)
+#render-checklists(config)
