@@ -22,8 +22,6 @@
     .windows(2)
 }
 
-#show: it => align(center+horizon, it)
-
 #let draw-flow-diag(left-list, right-list) = cetz.canvas(length: l, {
   import cetz.draw: *
   content((50, 40), image("cl60-cockpit.png", width: 100 * l))
@@ -32,13 +30,37 @@
     let left-pos = get-pos(left-list)
     for (i, c) in left-pos {
       if c.len() == 2 {
-        circle(c, radius: 0.8, ..(fill: white, stroke: 0.8pt + black), name: "left"+str(i))
-        content("left"+str(i), text(weight: "bold")[#str(i)])
+        anchor("left"+str(i), c)
       }
     }
 
     for (x, y) in get-lines(left-pos) {
       line("left"+str(x), "left"+str(y), stroke: black + 1pt)
+    }
+  }
+
+  if right-list != none {
+    let right-pos = get-pos(right-list)
+    for (i, c) in right-pos {
+      if c.len() == 2 {
+        anchor("right"+str(i), c)
+        circle(radius: 0.8, ..(fill: white, stroke: (dash: "dashed")), "right"+str(i))
+        content("right"+str(i), text(weight: "bold")[#str(i)])
+      }
+    }
+    for (x, y) in get-lines(right-pos) {
+      line("right"+str(x), "right"+str(y), stroke: (dash: "dashed"))
+    }
+  }
+
+  if left-list != none {
+    let left-pos = get-pos(left-list)
+    for (i, c) in left-pos {
+      if c.len() == 2 {
+        anchor("left"+str(i), c)
+        circle(radius: 0.8, ..(fill: white, stroke: 0.8pt + black), "left"+str(i))
+        content("left"+str(i), text(weight: "bold")[#str(i)])
+      }
     }
     content(left-list.diag-pos, box(fill: white, stroke: black, render-checklist(left-list), width: 22em))
   }
@@ -47,12 +69,10 @@
     let right-pos = get-pos(right-list)
     for (i, c) in right-pos {
       if c.len() == 2 {
-        circle(c, radius: 0.8, ..(fill: white, stroke: (dash: "dashed")), name: "right"+str(i))
+        anchor("right"+str(i), c)
+        circle(radius: 0.8, ..(fill: white, stroke: (dash: "dashed")), "right"+str(i))
         content("right"+str(i), text(weight: "bold")[#str(i)])
       }
-    }
-    for (x, y) in get-lines(right-pos) {
-      line("right"+str(x), "right"+str(y), stroke: (dash: "dashed"))
     }
     content(right-list.diag-pos, box(fill: white, stroke: (dash: "dashed"), render-checklist(right-list), width: 22em))
   }
