@@ -21,15 +21,15 @@ diag-pos = [48, 39]
  [[checklists.items]]
 left = "LDG GEAR LEVER"
 right = "DN"
-diag-pos = [51.5, 38.5]
+diag-pos = [51.5, 36]
  [[checklists.items]]
 left = "FLT SPOILER LEVER"
 right = "RETRACT"
-diag-pos = [46, 31]
+diag-pos = [46, 30]
  [[checklists.items]]
 left = "FLAPS LEVER / POSITION"
 right = "CHECK / MATCH"
-diag-pos = [57, 27.5]
+diag-pos = [57.5, 28]
  [[checklists.items]]
 left = "LDG GEAR MANUAL RELEASE"
 right = "STOW"
@@ -41,7 +41,7 @@ diag-pos = [52, 1]
  [[checklists.items]]
 left = "ADG LAMP TEST"
 right = "CHECK"
-diag-pos = [53.5, 2]
+diag-pos = [54, 2]
  [[checklists.items]]
 left = "LOGBOOK / DOCS"
 right = "ON BOARD / VERIFIED"
@@ -286,7 +286,7 @@ diag-pos = [43, 68]
 [[checklists.items]]
 left = "Fuel Booster Pumps"
 right = "On"
-diag-pos = [51, 75.5]
+diag-pos = [50, 75.5]
 [[checklists.items]]
 left = "Ignition A/B"
 right = "Arm"
@@ -317,11 +317,11 @@ rmk = "Captain initiates AFTER START flows by announcing \"Flaps 20, AFTER START
 [[checklists.items]]
 left = "Gen 1 & 2"
 right = "On"
-diag-pos = [44, 77]
+diag-pos = [44, 76.5]
 [[checklists.items]]
 left = "Ignition"
 right = "Disarm"
-diag-pos = [50, 78]
+diag-pos = [51, 77.5]
 [[checklists.items]]
 left = "Nose steer"
 right = "Arm"
@@ -329,19 +329,19 @@ diag-pos = [48, 39]
 [[checklists.items]]
 left = "GND and FLT Spoilers"
 right = "Check/Auto/Stow"
-diag-pos = [46, 29]
+diag-pos = [46, 30]
 [[checklists.items]]
 left = "APR"
 right = "ARM/TEST"
-diag-pos = [49, 21]
+diag-pos = [49, 22]
 [[checklists.items]]
 left = "ADG UNIT"
 right = "TEST"
-diag-pos = [53, 2]
+diag-pos = [54, 2]
 [[checklists.items]]
 left = "Flight Controls"
 right = "Check"
-diag-pos = [32, 34]
+diag-pos = [31.5, 34]
 
 [[checklists]]
 name = "After Start"
@@ -350,11 +350,11 @@ diag-pos = [78, 15.75]
 [[checklists.items]]
 left = "Flaps"
 right = "20 (When directed)"
-diag-pos = [57, 27]
+diag-pos = [57.5, 28]
 [[checklists.items]]
 left = "ATC/TCAS"
 right = "TA/RA"
-diag-pos = [58, 15]
+diag-pos = [59, 15]
 [[checklists.items]]
 left = "Fuel quantity & Balance"
 right = "Check"
@@ -364,15 +364,15 @@ rmk = " Maximum imbalance: 363KG/800LBS in flight, 182KG/400LBS for taxi, takeof
 [[checklists.items]]
 left = "Trims"
 right = "3 set for T/O"
-diag-pos = [43, 51]
+diag-pos = [42.5, 50]
 [[checklists.items]]
 left = "Packs"
 right = "ON"
-diag-pos = [50, 70]
+diag-pos = [50, 70.5]
 [[checklists.items]]
 left = "14TH Stage"
 right = "OPEN"
-diag-pos = [57, 73]
+diag-pos = [57.5, 73]
 [[checklists.items]]
 rmk = "Perform ANTI-ICE SYSTEM TEST if needed."
 
@@ -383,15 +383,15 @@ diag-pos = [78, 15.75]
 [[checklists.items]]
 left = "COWL ANTI-ICE"
 right = "ON / CHECK 45 SECS"
-diag-pos = [58, 70]
+diag-pos = [57, 69.5]
 [[checklists.items]]
 left = "COWL ANTI-ICE"
 right = "CHECK GREEN ADVISORY"
-diag-pos = [45, 48]
+diag-pos = [45.5, 50]
 [[checklists.items]]
 left = "SUPP GND WING"
 right = "ANTI-ICE TEST ON"
-diag-pos = [48, 43]
+diag-pos = [49, 43]
 [[checklists.items]]
 left = "SUPP GND WING ANTI-ICE"
 right = "TEST OK / OFF"
@@ -403,11 +403,11 @@ right = "OFF"
 [[checklists.items]]
 left = "WING ANTI-ICE"
 right = "NORM"
-diag-pos = [54, 69.5]
+diag-pos = [55, 69.5]
 [[checklists.items]]
 left = "14TH STAGE ISOL VALVE"
 right = "CHECK"
-diag-pos = [57, 73]
+diag-pos = [57.5, 73]
 [[checklists.items]]
 left = "WING ANTI-ICE"
 right = "CHECK / OFF"
@@ -424,15 +424,15 @@ diag-pos = [46, 64]
 [[checklists.items]]
 left = "Brakes & Steering"
 right = "Check"
-diag-pos = [11.5, 36]
+diag-pos = [12, 37]
 [[checklists.items]]
 left = "thrust reversers"
 right = "check"
-diag-pos = [50, 30]
+diag-pos = [50, 26]
 [[checklists.items]]
 left = "Wing & Cowl Anti-Ice"
 right = "AS RQRD"
-diag-pos = [56, 70]
+diag-pos = [56, 69.5]
 
 [[checklists]]
 name = "Before Take-off"
@@ -453,13 +453,13 @@ left = "EFIS/ATS/EICAS"
 right = "Check"
 diag-pos = [31, 50]
 [[checklists.items]]
-raw = """align(left)[Verify the following items:
+raw = """align(center, box(align(left)[Verify the following items:
 - Preset HDG
 - Speed target (VFTO/AS RQRD)
 - FMA active (TO/TO) and armed [LNAV/VNAV]
 - Preset ALT
 - ATS mode and N1 target, and
-- T/O Config OK]"""
+- T/O Config OK]))"""
 rmk = """Verify the following for the EFIS/ATS/EICAS:
 - Preset HDG
 - Speed target (VFTO/AS RQRD)
@@ -494,6 +494,7 @@ diag-pos = [45, 48]
 [[checklists]]
 name = "Descend"
 type = "F[ALL]"
+diag-pos = [20, 18]
 [[checklists.items]]
 rmk = "DESCEND flow should be completed by ALL flight crew members before reaching TOD."
 [[checklists.items]]
@@ -502,69 +503,84 @@ right = "Secure"
 [[checklists.items]]
 left = "Passenger Signs"
 right = "Auto/On"
+diag-pos = [55, 64.5]
 [[checklists.items]]
 left = "Pressurization"
 right = "Set LDG field elev"
+diag-pos = [57, 77]
 [[checklists.items]]
 left = "Fuel Quantity & Balance"
 right = "Check"
+diag-pos = [39, 47]
 [[checklists.items]]
 left = "FMS/Landing Data/Charts"
-right = "Set/Checked"
+right = "Set/Check"
+diag-pos = [44, 37.5]
 [[checklists.items]]
 left = "Transition Level"
 right = "Review/Set"
 [[checklists.items]]
-left = "thrust reversers"
-right = "Arm"
-[[checklists.items]]
 left = "Arrival Briefing"
-right = "Completed"
+right = "Complete"
 
 [[checklists]]
 name = "after landing"
 type = "SF[C]"
+diag-pos = [27.5, 18]
 [[checklists.items]]
 rmk = "Captain assumes PF role before 60kt for ground ops after vacating active runway."
 [[checklists.items]]
 left = "ldg, pulse, Recog lights"
 right = "Off"
+diag-pos = [43, 64]
 
 [[checklists]]
 name = "after landing"
 type = "SF[F]"
+diag-pos = [78, 20]
 [[checklists.items]]
 rmk = "First officer does not announce flow pattern items nor the completion of the flow. First officer's primary objective is to assist captain's taxi on the ground."
 [[checklists.items]]
-left = "radar"
-right = "stby"
-[[checklists.items]]
 left = "Flaps"
 right = "retract"
+diag-pos = [57.5, 28]
 [[checklists.items]]
-left = "Spoilers"
-right = "stowed"
-[[checklists.items]]
-left = "Anti-collision lights"
-right = "off"
-[[checklists.items]]
-left = "ignition"
-right = "off"
-[[checklists.items]]
-left = "Windshield heat"
-right = "off"
-[[checklists.items]]
-left = "Probes"
-right = "off"
-[[checklists.items]]
-left = "Wing anti-ice"
-right = "off"
-[[checklists.items]]
-left = "Cowl anti-ice"
-right = "as rqrd"
+left = "radar"
+right = "stby"
+# TODO: add to flow when implemented
+diag-pos = [58.5, 20.5]
 [[checklists.items]]
 left = "ATC/TCAS"
 right = "AS RQRD"
+diag-pos = [58.5, 15]
+[[checklists.items]]
+left = "Spoilers"
+right = "stowed"
+diag-pos = [41.5, 48]
+[[checklists.items]]
+left = "Anti-collision lights"
+right = "off"
+diag-pos = [44,67.5]
+[[checklists.items]]
+left = "Windshield heat"
+right = "off"
+diag-pos = [55, 68]
+[[checklists.items]]
+left = "Probes"
+right = "off"
+diag-pos = [58, 68]
+[[checklists.items]]
+left = "Cowl anti-ice"
+right = "as rqrd"
+diag-pos = [57, 70]
+[[checklists.items]]
+left = "Wing anti-ice"
+right = "off"
+diag-pos = [54, 70]
+[[checklists.items]]
+left = "continuous ignition"
+right = "off"
+diag-pos = [52.5, 78]
 
 [[checklists]]
 name = "Go Around"
@@ -611,7 +627,7 @@ right = "as required"
 #left = "flaps up (MIN 400ft AGL)"
 #right = "announce"
 [[checklists.items]]
-rmk = "IMMEDIATE RETURN/AFTER TAKE-OFF CHECKLIST NEXT"
+rmk = "IMMEDIATE RETURN/AFTER TAKE-OFF NEXT"
 
 [[checklists]]
 name = "Discontinued Approach"
@@ -639,4 +655,4 @@ right = "Set as required"
 left = "Clean up"
 right = "as required"
 [[checklists.items]]
-rmk = "IMMEDIATE RETURN/AFTER TAKE-OFF CHECKLIST NEXT"
+rmk = "IMMEDIATE RETURN/AFTER TAKE-OFF NEXT"

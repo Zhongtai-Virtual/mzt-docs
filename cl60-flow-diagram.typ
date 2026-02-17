@@ -33,7 +33,6 @@
         anchor("left"+str(i), c)
       }
     }
-
     for (x, y) in get-lines(left-pos) {
       line("left"+str(x), "left"+str(y), stroke: black + 1pt)
     }
@@ -44,8 +43,6 @@
     for (i, c) in right-pos {
       if c.len() == 2 {
         anchor("right"+str(i), c)
-        circle(radius: 0.8, ..(fill: white, stroke: (dash: "dashed")), "right"+str(i))
-        content("right"+str(i), text(weight: "bold")[#str(i)])
       }
     }
     for (x, y) in get-lines(right-pos) {
@@ -57,7 +54,6 @@
     let left-pos = get-pos(left-list)
     for (i, c) in left-pos {
       if c.len() == 2 {
-        anchor("left"+str(i), c)
         circle(radius: 0.8, ..(fill: white, stroke: 0.8pt + black), "left"+str(i))
         content("left"+str(i), text(weight: "bold")[#str(i)])
       }
@@ -69,7 +65,6 @@
     let right-pos = get-pos(right-list)
     for (i, c) in right-pos {
       if c.len() == 2 {
-        anchor("right"+str(i), c)
         circle(radius: 0.8, ..(fill: white, stroke: (dash: "dashed")), "right"+str(i))
         content("right"+str(i), text(weight: "bold")[#str(i)])
       }
@@ -112,3 +107,9 @@
 
 = Before Take-Off Flow
 #draw-flow-diag(config.checklists.at(8), config.checklists.at(9))
+
+= Descend Flow
+#draw-flow-diag(config.checklists.at(10), none)
+
+= After Landing Flow
+#draw-flow-diag(config.checklists.at(11), config.checklists.at(12))
