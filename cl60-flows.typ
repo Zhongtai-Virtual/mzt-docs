@@ -5,3 +5,4 @@
 #page-header-from-config(config)
 #show: columns.with(3)
 #render-checklists(config)
+#signature-field()

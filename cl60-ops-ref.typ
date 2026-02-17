@@ -77,6 +77,8 @@ Use ALD for approach performance calculation and set the factor as follows.
 #footnote[For background, see 
 #link("https://hotstart.net/wiki/CL650/Operations_Reference/Landing_Performance_Assessment_Using_RWYCC")[hotstart.net].]
 
+#place(dy: 9em, bottom, signature-field())
+
 #for (key, value) in ("TWO THRUST REVERSERS": two_ref, "ONE or ZERO THRUST REVERSERS": one_or_zero) {
   show table.cell.where(x: 0): strong
   show table.cell.where(y: 0): strong

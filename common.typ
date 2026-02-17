@@ -79,7 +79,7 @@
   show math.equation: set text(font: ("Sarasa Fixed CL", "Fira Math"), weight: "regular")
 
   set text(size: 10pt)
-  set par(spacing: 1em, justify: true)
+  set par(spacing: 1em)
 
   set page(
     margin: (top: 0.2in, bottom: 0.2in, left: 0.2in, right: 0.2in),
@@ -88,6 +88,15 @@
     background: [
     #if sys.inputs.at("RELEASE", default: "0") == "1" {
       place(rect(width: 100%, height: 100%, outset: -2mm, stroke: color+1mm))
+      context {
+        let field-page = locate(<digital-signature-field>).page()
+        layout(size => {
+          if field-page != here().page() {
+            place(dx: size.width - 13em, dy: size.height/2 - 1.2em, bottom)[{{POI/INIT}}]
+            place(dx: size.width - 7em, dy: size.height/2 - 1.2em, bottom)[{{APM/INIT}}]
+          }
+        })
+      }
     } else {
       let color = black
       set text(fill: white, weight: "bold")
@@ -147,7 +156,6 @@
   },
 )
 
-
 #let render-checklists(config) = for checklist in config.checklists {
   let wrapper = if checklist.items.len() < 20 {
     box
@@ -157,4 +165,21 @@
   wrapper(
     render-checklist(checklist)
   )
+}
+
+#let signature-field() = {
+  set text(size: 0.8em)
+  show: it => align(center+horizon, it)
+  set par(justify: false)
+  if sys.inputs.at("RELEASE", default: "0") == "1" [
+    #metadata("DIGITAL_SIGNATURE_FIELD") <digital-signature-field>
+    #table(
+      columns: (0.8fr, 1.5fr, 1.5fr),
+      stroke: none,
+      table.cell(colspan: 3)[This document has been digitally signed by the following authorized representatives:],
+      table.cell(rowspan: 2)[Approved by:], [{{POI/SIGNATURE}}], table.cell(rowspan: 2)[{{POI/DATE-TIME}}], [Principal Operations Inspector],
+      table.cell(rowspan: 2)[Reviewed by:], [{{APM/SIGNATURE}}], table.cell(rowspan: 2)[{{APM/DATE-TIME}}], [Aircrew Program Manager CL60],
+    )
+  ]
+  else [#text(size: 2em, fill: red)[*NOT APPROVED FOR OPERATION*]]
 }

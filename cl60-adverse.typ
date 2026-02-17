@@ -53,3 +53,4 @@ Contamination by even small amounts of frost, ice, or snow can lead to a signifi
   - If the aircraft has been treated with anti-ice fluid the Wing Anti-Ice system should be selected NORM immediately before setting take-off thrust.
   - If no fluid treatment has occurred the Wing Anti-Ice system should be selected NORM in the final stages of taxi.
 
+#signature-field()

@@ -90,6 +90,11 @@
   }
 })
 
+#page-header("Flow Diagrams", "N4")
+
+#show: it => align(center+horizon, it)
+#signature-field()
+
 = Cockpit Safety Check Flow
 #draw-flow-diag(config.checklists.at(0), none)
 

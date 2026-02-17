@@ -213,3 +213,5 @@ Candidate should perform a full-stop landing and stop on the runway. Evaluation 
 = Evaluation Outcome
 The examiner will announce the simulator screen result after all maneuvers are completed.
 The examiner should collect all the notes and debrief the candidate after the result has been announced. 
+
+#signature-field()
