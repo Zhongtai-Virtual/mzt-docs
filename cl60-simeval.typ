@@ -2,7 +2,7 @@
 #show: page-template
 #set par(leading: 0.5em)
 #set page(flipped: false)
-#page-header("Screening Profile", "T1", rev: "Jan 26 2026")
+#page-header("Screening Profile", "T1")
 
 #show "[Sat]": set text(fill: green, weight: "bold")
 #show "[Unsat]": set text(fill: red, weight: "bold")
@@ -91,7 +91,7 @@ When aircraft were heading 090, Examiner will command #exam_cmd["Autopilot on, I
 
 The examiner will continue climbing to 3000m
 
-#key_msg[This is a first-look maneuver. Candidates are not allowed to perform this in the warm-up exercise.]
+#key_msg[This is a first-look maneuver. Candidates are not allowed to perform any warm-up exercise.]
 
 == Hand-Flown Steep Turn
 
@@ -116,7 +116,7 @@ The candidate should perform the steep turn.
 
 When aircrafts roll out back on the initial heading, the examiner will command #exam_cmd["Autopilot on, I have the aircraft."]
 
-#key_msg[This is a first-look maneuver. Candidates are not allowed to perform the warm-up exercise.]
+#key_msg[This is a first-look maneuver. Candidates are not allowed to perform any warm-up exercise.]
 
 After the Steep turn, the examiner will instruct the candidate to 
 - Descend to 900m; and 
@@ -125,26 +125,31 @@ After the Steep turn, the examiner will instruct the candidate to
 
 == ILS Instrument Approach
 
-Aircraft setup:
-- Setup for ILS approach. The examiner should verify the ILS frequency.
-- V#sub[APP]
-- Minima properly set up
-
 Instructor will then hand over the aircraft to the candidate with command #exam_cmd["You have the aircraft; You have the radios."]
-The examiner will vector the candidate to intercept the LOC outside of PD033. 
+
+#exam_cmd["Zhongtai 1500, direct MP1, expect ILS z approach runway 16L."]
+
+#exam_cmd["Zhongtai 1500, continue heading 170, radar vector."]
+
+#exam_cmd["Zhongtai 1500, turn right heading 200, maintain 600m until established, cleared for ILS approach runway 16L."]
+
+The examiner will vector the candidate to intercept the LOC outside of PD073. 
 
 Examiner will observe: 
 Energy, configuration, flight plan sequencing, and radio management
 
-When glide slope intercept. The examiner will command #exam_cmd["Autopilot off, you are cleared to land Runway 16, full stop on the runway."] When aircraft pass 100ft RA, the examiner will announce: #exam_cmd["Zhongtai 1500 go-around, climb and maintain 600m, fly published miss."]
+When glide slope intercept. The examiner will command #exam_cmd["Autopilot off, you are cleared to land Runway 16L, full stop on the runway."] 
 
-#key_msg[This is a first-look maneuver. Candidates are not allowed to perform this in the warm-up exercise.]
+When aircraft pass 100ft RA, the examiner will announce: #exam_cmd["Zhongtai 1500 go-around, climb and maintain 600m, fly published miss."]
+
+#key_msg[This is a first-look maneuver. Candidates are not allowed to perform any warm-up exercise.]
 
 == Go-Around
 - Candidates #key_msg[WILL] manage the Flight Path First (#key_msg[Fly the airplane!]) 
 - Candidates #key_msg[SHALL] press the TOGA and ATS disconnect buttons to bring up the proper FD mode
 - Candidates #key_msg[SHOULD] make the call-out in timely manner
 - Candidates are #key_msg[RECOMMENDED] to use/command the autopilot and/or FD mode at appropriate time
+  - Specifically, candidates are expected to use LNAV to fly the published missed approach procedure. For an ILS approach, this almost always requires changing the nav source manually.
 
 Examiner will ensure the safe outcome of this manuever.
 
@@ -198,7 +203,14 @@ Specifically, the examiner will emphasize that:
 - Maximum deviation requirements beyond FDP/VIP
   - Vertical: 50ft callout, 75ft (1 dot) go-around
   - Lateral: 1/2 RNP or 1 dot call-out, 1 RNP or 2 dots go-around
-- Altitude window to TDEZ+100ft
+- Set preselected altitude
+  - Set TDEZ+100ft when and only when all of the following conditions are met:
+    - *Cleared*: Cleared for approach; and
+    - *Established*: Established on public portion of the instrument approach procedure; and
+      - You are considered to be on public portion of the approach starting from 2 nautical miles within the TO-waypoint in the procedure.
+    - *Protected*: Altitudes of all waypoints up to (including) the vertical interception point (VIP) or final approach fix (FAF) are protected.
+  - If unable to set TDEZ+100ft, the minimum allowed altitude selection is the altitude at VIP or FAF (e.g., when cleared for the approach outside of IAF.) 
+  - If radar vectored off the approach procedure when the selected altitude is TDEZ+100ft or VIP/FAF altitude, pilots shall press *ALT* to hold current altitude, and confirm altitude target with ATC immediately. 
 - Arm APPR prior to FDP/VIP
 - At VGP, preselect missed approach altitude
 
