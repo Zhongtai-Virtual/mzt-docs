@@ -223,7 +223,7 @@ Candidate should perform a full-stop landing and stop on the runway. Evaluation 
 #key_msg[Maneuver terminated]
 
 = Evaluation Outcome
-The examiner will announce the simulator screen result after all maneuvers are completed.
+The examiner will announce the simulator screen result after all maneuvers are completed, or if the examiner determines that an [Sat] outcome is no longer possible for the candidate’s performance.
 The examiner should collect all the notes and debrief the candidate after the result has been announced. 
 
 #signature-field()
