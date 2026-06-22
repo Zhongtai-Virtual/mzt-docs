@@ -4,7 +4,7 @@ This repository consists of the (mainly aircraft) documentations of Zhongtai Vir
 # Build
 To export the checklists/flows to HotStart CL650, run
 ```sh
-python toml2cl60.py >/output/path/checklists.xml
+python scripts/toml2cl60.py >/output/path/checklists.xml
 ```
 It is recommended to back up the original `checklists.xml` file.
 

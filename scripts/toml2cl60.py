@@ -1,17 +1,22 @@
 import tomllib
 import sys
+import os
 import xml.etree.cElementTree as ET
 import textwrap
 
+# Resolve paths relative to the repo root (parent of scripts/) so the script
+# works regardless of the current working directory.
+REPO = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 metadata=[]
 groups=[]
-with open("./checklist.toml", "rb") as f:
+with open(os.path.join(REPO, "manuals", "checklist.toml"), "rb") as f:
     data = tomllib.load(f)
     groups.append(data)
-with open("./flows.toml", "rb") as f:
+with open(os.path.join(REPO, "manuals", "flows.toml"), "rb") as f:
     data = tomllib.load(f)
     groups.append(data)
-with open("./meta.toml", "rb") as f:
+with open(os.path.join(REPO, "meta.toml"), "rb") as f:
     metadata = tomllib.load(f)
 
 root = ET.Element("checklists")
