@@ -1,10 +1,6 @@
-#import "common.typ": *
+#import "/common.typ": *
 #set text(font: "Sarasa Fixed CL", size: 8pt)
 #show math.equation: set text(font: ("Sarasa Fixed CL", "Fira Math"), weight: "regular")
-
-#let meta = toml("meta.toml")
-#let mcolor = meta.metadata.color
-#let revision = meta.metadata.date
 
 #show: page-template
 #page-header("BRIEFING", "N3")

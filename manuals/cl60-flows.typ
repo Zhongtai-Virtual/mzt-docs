@@ -1,4 +1,4 @@
-#import "./common.typ": *
+#import "/common.typ": *
 #let config = toml("flows.toml")
 #show: page-template
 #set par(leading: 0.5em)

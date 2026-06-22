@@ -1,4 +1,4 @@
-#import "./common.typ": *
+#import "/common.typ": *
 #show: page-template
 #set par(leading: 0.5em)
 #page-header("Operational Reference", "R1")

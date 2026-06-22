@@ -1,5 +1,5 @@
 #import "@preview/cetz:0.4.2"
-#import "common.typ": *
+#import "/common.typ": *
 #show: page-template
 #set page(paper: "us-letter")
 #set text(font: "Sarasa Fixed CL")
