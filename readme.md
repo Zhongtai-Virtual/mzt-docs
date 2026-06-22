@@ -33,6 +33,8 @@ git-ignored.
 - `fzf` and `gpg` — the section picker and detached-signing step.
 - A Documenso API key for the `documenso.mzt.app` instance (the scripts prompt
   for it).
+- `MZT_DOC_PUBLISH_DIR` set to the publish root (where signed documents are
+  filed), required by the download/publish step.
 
 # Rendering PDFs
 
@@ -61,7 +63,7 @@ python scripts/toml2cl60.py >/output/path/checklists.xml
 
 It is recommended to back up the original `checklists.xml` first.
 
-# Release workflow
+# Release workflow (manual)
 
 Releasing a section (`manuals` or `simulator-profiles`) is a two-stage,
 human-in-the-loop process backed by a self-hosted
@@ -82,11 +84,12 @@ human-in-the-loop process backed by a self-hosted
 2. **Sign.** Each signer/approver completes the envelope in turn.
 
 3. **Download & publish.** Once fully signed, pull the signed PDFs and move them
-   to the per-section subfolder of the company share
-   (`~/MZT/company-shared/documents/CL60/<section>/`). For the `manuals`
-   section it also regenerates and GPG detach-signs the HotStart sim checklist:
+   into a per-section subfolder beneath `$MZT_DOC_PUBLISH_DIR` (the publish root,
+   which must be set in the environment). For the `manuals` section it also
+   regenerates and GPG detach-signs the HotStart sim checklist:
 
    ```sh
+   set -x MZT_DOC_PUBLISH_DIR ~/MZT/company-shared/documents/CL60
    scripts/download-and-publish-docs.fish <envelope_id> [manuals|simulator-profiles]
    ```
 
@@ -95,3 +98,79 @@ human-in-the-loop process backed by a self-hosted
 Both wrappers prompt for `DOCUMENSO_API_KEY` (skipped if it is already set in
 the environment) and, on first run, build the repo-local `.venv/` from
 `scripts/requirements.txt` (`documenso-sdk`, `httpx`, `pypdf`).
+
+# CI/CD
+
+GitHub Actions (`.github/workflows/`):
+
+- **`ci.yml`** — on push/PR, compiles every document with `RELEASE=1` and runs
+  the sim-checklist export, so a broken `.typ`/`.toml` fails fast. Fonts are
+  downloaded by the `setup-build` composite action (`TYPST_FONT_PATHS=fonts`).
+- **`release-upload.yml`** — automates the upload half of the release workflow.
+- **`release-publish.yml`** — automates the publish half.
+
+## Automated release
+
+Each section is released with its **own tag**:
+
+| Section | Tag |
+| --- | --- |
+| `manuals` | `cl60-manual/<date>` (e.g. `cl60-manual/2026-06-22`) |
+| `simulator-profiles` | `cl60-profile/<date>` |
+
+A commit may carry both tags; GitHub fires one `release-upload` run per tag, and
+each run resolves its section from the tag prefix. The flow:
+
+```
+tag push ─► release-upload.yml ─► Documenso envelope (distributed)
+                                       │  POI → VP Flight Ops → APM sign
+                                       ▼
+                              DOCUMENT_COMPLETED webhook
+                                       │
+                              documenso-webhook-bridge.py
+                                       │  repository_dispatch
+                                       ▼
+                            release-publish.yml ─► download signed PDFs,
+                            GPG-sign checklists.xml (manuals), create the
+                            GitHub Release and upload the assets
+```
+
+The release tag is embedded in the Documenso envelope title so the bridge can
+map a completed envelope back to its tag (the webhook payload carries only the
+title, no metadata).
+
+## The webhook bridge
+
+GitHub can't be a Documenso webhook target directly (Documenso sends only a
+fixed `X-Documenso-Secret` header, not GitHub's auth or dispatch payload). So
+`scripts/documenso-webhook-bridge.py` runs locally, verifies the secret, parses
+the completed envelope's title into `(section, tag)`, and triggers
+`release-publish.yml` via `repository_dispatch`.
+
+Run it (deps: `scripts/bridge-requirements.txt`, only needed for GitHub App
+auth):
+
+```sh
+set -x DOCUMENSO_WEBHOOK_SECRET ...
+set -x GITHUB_REPO Zhongtai-Virtual/mzt-docs
+# GitHub App auth (preferred):
+set -x GITHUB_APP_ID ...
+set -x GITHUB_APP_INSTALLATION_ID ...
+set -x GITHUB_APP_PRIVATE_KEY (cat app-private-key.pem)
+# …or a PAT instead: set -x GITHUB_TOKEN ...
+python scripts/documenso-webhook-bridge.py    # listens on $PORT (default 8080)
+```
+
+Then in Documenso, add a webhook for **DOCUMENT_COMPLETED** pointing at this
+host, with the same secret.
+
+## Required configuration
+
+- **GitHub Actions secrets:** `DOCUMENSO_API_KEY`, and `GPG_PRIVATE_KEY`
+  (base64-encoded; use a dedicated CI signing subkey with an expiry, not a
+  personal key).
+- **`release` environment** with required reviewers — `release-upload.yml` is
+  gated on it, so a stray tag can't fire real signature requests unattended.
+- **GitHub App** (for the bridge): grant `contents: write`, install it on this
+  repo, and give the bridge the app id, installation id, and private key. App
+  installation tokens are short-lived and repo-scoped — preferred over a PAT.
