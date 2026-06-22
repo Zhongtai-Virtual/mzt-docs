@@ -1,0 +1,4 @@
+# Dependencies for documenso-webhook-bridge.py (the Documenso -> GitHub bridge).
+# Only needed when authenticating to GitHub as a GitHub App; the PAT path and
+# the rest of the bridge use the standard library.
+PyJWT[crypto]==2.10.1

@@ -1,0 +1,36 @@
+name: Set up Typst and fonts
+description: >
+  Install the pinned Typst toolchain and download the document fonts
+  (Sarasa Fixed CL + Fira Math) into ./fonts. Consumers should set
+  TYPST_FONT_PATHS=fonts so `typst compile` picks them up.
+
+runs:
+  using: composite
+  steps:
+    - name: Install Typst 0.15.0
+      shell: bash
+      run: |
+        ver=0.15.0
+        curl -fsSL "https://github.com/typst/typst/releases/download/v${ver}/typst-x86_64-unknown-linux-musl.tar.xz" | tar -xJ
+        echo "$PWD/typst-x86_64-unknown-linux-musl" >> "$GITHUB_PATH"
+
+    - name: Cache fonts
+      id: fonts
+      uses: actions/cache@v4
+      with:
+        path: fonts
+        # Bump this key whenever the font versions below change.
+        key: fonts-sarasa1.0.29-firamath0.3.4
+
+    - name: Download fonts
+      if: steps.fonts.outputs.cache-hit != 'true'
+      shell: bash
+      run: |
+        sudo apt-get update && sudo apt-get install -y p7zip-full
+        mkdir -p fonts
+        # TODO: verify the exact asset name/version on the releases pages.
+        curl -fsSL -o sarasa.7z \
+          "https://github.com/be5invis/Sarasa-Gothic/releases/download/v1.0.29/SarasaFixedCL-TTF-1.0.29.7z"
+        7z x sarasa.7z -ofonts
+        curl -fsSL -o fonts/FiraMath-Regular.otf \
+          "https://github.com/firamath/firamath/releases/download/v0.3.4/FiraMath-Regular.otf"

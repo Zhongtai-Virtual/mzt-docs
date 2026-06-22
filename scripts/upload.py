@@ -14,6 +14,13 @@ TITLES = {
 }
 title = TITLES[part]
 
+# Embed the release tag in the title when present (set by CI). The Documenso
+# webhook payload exposes only the title, so this is how the publish bridge
+# recovers which release tag a completed envelope belongs to.
+release_tag = os.getenv("RELEASE_TAG", "")
+if release_tag:
+    title = f"{title} {release_tag}"
+
 def count_pdf_pages(pdf_path):
     with open(pdf_path, "rb") as filehandle:
         reader = PdfReader(filehandle)
@@ -87,6 +94,13 @@ with Documenso(
     }
     with httpx.Client(timeout=60.0) as client:
         res = client.post(field_url, json=field_payload, headers=headers)
-        print(res.text)
+        res.raise_for_status()
+        print(res.text, file=sys.stderr)
 
-    #documenso.envelopes.distribute(envelope_id=envelope_id)
+    # Distribute (notify signers) only when explicitly enabled, so local/manual
+    # runs can create an envelope without sending it out. CI sets this.
+    if os.getenv("DOCUMENSO_DISTRIBUTE") == "1":
+        documenso.envelopes.distribute(envelope_id=envelope_id)
+
+    # Emit the envelope id on stdout for the publish step to consume.
+    print(envelope_id)

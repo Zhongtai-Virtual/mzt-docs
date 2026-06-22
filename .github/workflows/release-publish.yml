@@ -1,0 +1,71 @@
+name: Release · publish signed
+
+# Triggered when Documenso reports an envelope completed. GitHub can't receive
+# the Documenso webhook directly, so scripts/documenso-webhook-bridge.py relays
+# it as a repository_dispatch. workflow_dispatch is kept for manual publishing.
+on:
+  repository_dispatch:
+    types: [documenso-completed]
+  workflow_dispatch:
+    inputs:
+      envelope_id:
+        description: Documenso envelope id to publish
+        required: true
+      section:
+        description: Document section
+        required: true
+        type: choice
+        options: [manuals, simulator-profiles]
+      tag:
+        description: Release tag to attach the assets to
+        required: true
+
+permissions:
+  contents: write # create / upload release assets
+
+jobs:
+  publish:
+    name: Download signed and publish
+    runs-on: ubuntu-latest
+    env:
+      # Resolve from whichever trigger fired.
+      ENVELOPE_ID: ${{ github.event.client_payload.envelope_id || inputs.envelope_id }}
+      SECTION: ${{ github.event.client_payload.section || inputs.section }}
+      TAG: ${{ github.event.client_payload.tag || inputs.tag }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate inputs
+        run: |
+          case "$SECTION" in
+            manuals|simulator-profiles) ;;
+            *) echo "::error::invalid section: $SECTION"; exit 1 ;;
+          esac
+          if [ -z "$ENVELOPE_ID" ] || [ -z "$TAG" ]; then
+            echo "::error::missing envelope id or tag"; exit 1
+          fi
+
+      - name: Install fish + gnupg
+        run: sudo apt-get update && sudo apt-get install -y fish gnupg
+
+      - name: Import GPG signing key
+        env:
+          GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+        run: printf '%s' "$GPG_PRIVATE_KEY" | base64 -d | gpg --batch --import
+
+      - name: Download signed docs and publish to the Release
+        env:
+          DOCUMENSO_API_KEY: ${{ secrets.DOCUMENSO_API_KEY }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          tmp="$(mktemp -d)"
+          export MZT_DOC_PUBLISH_DIR="$tmp"
+          # Reuses the existing pipeline: download signed PDFs, and (for manuals)
+          # regenerate + GPG-sign checklists.xml, filing them under $tmp/$SECTION.
+          fish scripts/download-and-publish-docs.fish "$ENVELOPE_ID" "$SECTION"
+          # The tag exists but has no Release yet; create it if missing.
+          gh release create "$TAG" --title "$TAG" --notes "Signed $SECTION documents." --verify-tag || true
+          gh release upload "$TAG" "$tmp/$SECTION"/* --clobber
+
+# REQUIRED SECRETS: DOCUMENSO_API_KEY, GPG_PRIVATE_KEY (base64-encoded private
+# key; use a dedicated CI signing subkey with an expiry, not a personal key).

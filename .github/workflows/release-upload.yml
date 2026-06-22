@@ -1,0 +1,54 @@
+name: Release · upload for signing
+
+# Each section is released with its own tag, e.g. cl60-manual/2026-06-22 or
+# cl60-profile/2026-06-22. A commit can carry both tags (one run fires per tag).
+# The section is derived from the tag prefix; the full tag is embedded in the
+# Documenso envelope title so the publish bridge can map it back.
+on:
+  push:
+    tags:
+      - "cl60-manual/*"
+      - "cl60-profile/*"
+
+env:
+  TYPST_FONT_PATHS: fonts
+
+jobs:
+  upload:
+    name: Upload to Documenso
+    runs-on: ubuntu-latest
+    # Gate behind a manual approval so a stray tag cannot fire real signature
+    # requests. Configure the "release" environment with required reviewers.
+    environment: release
+    env:
+      TAG: ${{ github.ref_name }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Resolve section from tag
+        run: |
+          case "$TAG" in
+            cl60-manual/*) section=manuals ;;
+            cl60-profile/*) section=simulator-profiles ;;
+            *) echo "::error::unrecognized release tag: $TAG"; exit 1 ;;
+          esac
+          echo "releasing section: $section ($TAG)"
+          echo "section=$section" >> "$GITHUB_ENV"
+
+      - name: Install fish
+        run: sudo apt-get update && sudo apt-get install -y fish
+
+      - uses: ./.github/actions/setup-build
+
+      - name: Upload to Documenso
+        env:
+          DOCUMENSO_API_KEY: ${{ secrets.DOCUMENSO_API_KEY }}
+          # Notify signers. Local/manual runs leave this unset to only create.
+          DOCUMENSO_DISTRIBUTE: "1"
+          # Embedded into the envelope title; the publish bridge reads it back.
+          RELEASE_TAG: ${{ github.ref_name }}
+        run: fish scripts/upload-docs-for-approval.fish "$section"
+
+# upload.py prints the envelope id (stdout) and distributes when
+# DOCUMENSO_DISTRIBUTE=1. Completion is relayed to the publish workflow by
+# scripts/documenso-webhook-bridge.py via repository_dispatch.

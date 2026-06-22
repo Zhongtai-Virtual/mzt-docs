@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+env:
+  TYPST_FONT_PATHS: fonts
+
+jobs:
+  compile:
+    name: Compile all documents
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: ./.github/actions/setup-build
+
+      - name: Compile (RELEASE mode)
+        run: |
+          shopt -s nullglob
+          status=0
+          for f in manuals/cl60-*.typ manuals/revisions.typ \
+                   simulator-profiles/cl60-*.typ simulator-profiles/revisions.typ; do
+            echo "::group::$f"
+            if ! typst compile --root . --input RELEASE=1 "$f" "/tmp/$(basename "$f").pdf"; then
+              echo "::error file=$f::failed to compile"
+              status=1
+            fi
+            echo "::endgroup::"
+          done
+          exit $status
+
+      - name: Check sim checklist export
+        run: python3 scripts/toml2cl60.py > /tmp/checklists.xml
