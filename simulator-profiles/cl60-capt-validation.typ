@@ -1,4 +1,4 @@
-#import "./common.typ": *
+#import "../common.typ": *
 #show: page-template
 #set par(leading: 0.5em)
 #set page(flipped: false)
@@ -14,10 +14,10 @@
 #let exam_cmd = it => text(fill: purple, it)
 #let key_msg = it => text(fill: red, it)
 
-This Maneuver Validation Profile is designed for the Captain Upgrade and Annual Proficiency check at Zhongtai Virtual. The aim for this assessment is to ensure that our flight crew retained the necessary CRM/TEM skill, stick and rudder skill, basic instrument scanning skills, and basic IFR skills.
+This Maneuver Validation Profile is designed for the Captain Upgrade and Annual Proficiency check at Zhongtai Virtual. The aim for this assessment is to ensure that our flight crew retains the necessary CRM/TEM skill, stick and rudder skill, basic instrument scanning skills, and basic IFR skills.
 
 = What to Expect
-The design of this Validation is _not_ to “weed out” our flight crew. Though some of the maneuver might seems to be challenging, the the purpose of the session is to “_train_ to proficient” 
+The design of this Validation is _not_ to "weed out" our flight crew. Though some of the maneuver might seems to be challenging, the purpose of the session is to "_train_ to proficient." Only Captain Upgrade trainings are graded pass/fail.
 
 The final outcome of this evaluation will be determined by the outcomes of each item:
 - [Sat]: Satisfactory
