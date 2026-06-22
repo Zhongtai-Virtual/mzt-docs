@@ -1,7 +1,7 @@
 #!/usr/bin/env fish
 
-# Repo root = parent of this script's directory (scripts/).
-set repo (path dirname (status dirname))
+# Repo root = parent of this script's directory (scripts/), as an absolute path.
+set repo (path resolve (status dirname)/..)
 set docs_repo $repo
 
 set section $argv[1]

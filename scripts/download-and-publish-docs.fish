@@ -1,7 +1,7 @@
 #!/usr/bin/env fish
 
-# Repo root = parent of this script's directory (scripts/).
-set repo (path dirname (status dirname))
+# Repo root = parent of this script's directory (scripts/), as an absolute path.
+set repo (path resolve (status dirname)/..)
 
 set envelope_id $argv[1]
 if test -z "$envelope_id"
@@ -19,7 +19,14 @@ if not contains -- "$section" manuals simulator-profiles
     exit 1
 end
 
-set dest ~/MZT/company-shared/documents/CL60/$section
+# Publish root must be supplied via the environment (e.g. the local company
+# share, or a temp dir in CI before uploading to a GitHub Release). The signed
+# documents are filed into a per-section subfolder beneath it.
+if test -z "$MZT_DOC_PUBLISH_DIR"
+    echo "set MZT_DOC_PUBLISH_DIR to the publish root (e.g. ~/MZT/company-shared/documents/CL60)" >&2
+    exit 1
+end
+set dest $MZT_DOC_PUBLISH_DIR/$section
 mkdir -p $dest
 
 set dir (mktemp -d)
