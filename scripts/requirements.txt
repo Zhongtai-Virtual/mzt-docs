@@ -1,0 +1,5 @@
+# Dependencies for the release/publishing scripts (upload.py, download.py).
+# Pinned to the versions verified working under Python 3.14.
+documenso-sdk==0.6.0
+httpx==0.28.1
+pypdf==6.7.0

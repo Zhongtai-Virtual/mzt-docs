@@ -1,3 +1,5 @@
 *.pdf
 *.xml
 *.sig
+.venv/
+__pycache__/

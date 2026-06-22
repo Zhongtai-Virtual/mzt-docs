@@ -9,8 +9,8 @@ path = sys.argv[1]
 part = sys.argv[2]
 
 TITLES = {
-    "manuals": "MZT Manuals",
-    "simulator-profiles": "MZT Simulator Profiles",
+    "manuals": "CL60 Manuals",
+    "simulator-profiles": "CL60 Simulator Profiles",
 }
 title = TITLES[part]
 

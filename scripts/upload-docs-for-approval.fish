@@ -18,8 +18,10 @@ set pdf_dir (mktemp -d)
 for typ_file in $docs_repo/$section/*.typ
     typst compile --root="$docs_repo" --input RELEASE=1 $typ_file $pdf_dir/(path basename -E $typ_file).pdf || exit 1
 end
-source ~/Code/documenso/venv/bin/activate.fish
-set -x DOCUMENSO_API_KEY (read -s -P "Documenso API Key: ")
+source $repo/scripts/activate-venv.fish; or exit 1
+if test -z "$DOCUMENSO_API_KEY"
+    set -x DOCUMENSO_API_KEY (read -s -P "Documenso API Key: ")
+end
 python $repo/scripts/upload.py $pdf_dir $section
 echo $pdf_dir
 rm -rf $pdf_dir

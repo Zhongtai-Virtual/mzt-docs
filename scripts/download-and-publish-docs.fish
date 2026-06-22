@@ -5,8 +5,10 @@ set repo (path dirname (status dirname))
 
 set dir (mktemp -d)
 echo $dir
-source ~/Code/documenso/venv/bin/activate.fish
-set -x DOCUMENSO_API_KEY (read -s -P "Documenso API Key: ")
+source $repo/scripts/activate-venv.fish; or exit 1
+if test -z "$DOCUMENSO_API_KEY"
+    set -x DOCUMENSO_API_KEY (read -s -P "Documenso API Key: ")
+end
 python $repo/scripts/download.py $argv[1] $dir
 python $repo/scripts/toml2cl60.py >$dir/checklists.xml
 gpg --sign --detach-sign <$dir/checklists.xml >$dir/checklists.xml.sig
