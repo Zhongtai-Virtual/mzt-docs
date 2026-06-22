@@ -81,13 +81,16 @@ human-in-the-loop process backed by a self-hosted
 
 2. **Sign.** Each signer/approver completes the envelope in turn.
 
-3. **Download & publish.** Once fully signed, pull the signed PDFs, regenerate
-   and GPG detach-sign the HotStart sim checklist, and move everything to the
-   company share (`~/MZT/company-shared/documents/CL60/`):
+3. **Download & publish.** Once fully signed, pull the signed PDFs and move them
+   to the per-section subfolder of the company share
+   (`~/MZT/company-shared/documents/CL60/<section>/`). For the `manuals`
+   section it also regenerates and GPG detach-signs the HotStart sim checklist:
 
    ```sh
-   scripts/download-and-publish-docs.fish <envelope_id>
+   scripts/download-and-publish-docs.fish <envelope_id> [manuals|simulator-profiles]
    ```
+
+   The section is picked with `fzf` if omitted.
 
 Both wrappers prompt for `DOCUMENSO_API_KEY` (skipped if it is already set in
 the environment) and, on first run, build the repo-local `.venv/` from
