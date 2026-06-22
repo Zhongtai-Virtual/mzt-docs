@@ -38,7 +38,8 @@
 #let page-header(title, page, rev: none) = {
   let meta = toml("meta.toml")
   let mcolor = meta.metadata.color
-  let revision = if rev == none { meta.metadata.date } else { rev }
+  //let revision = if rev == none { meta.metadata.date } else { rev }
+  let revision = if rev == none { datetime.today().display("[month]/[day]/[year]") } else { rev }
 
   show grid.cell: it => align(center+horizon, it)
 
@@ -165,6 +166,24 @@
   wrapper(
     render-checklist(checklist)
   )
+}
+
+#let render-revisions(config) = {
+  set par(justify: false)
+  for file in config.files {
+    block(breakable: false, width: 100%, below: 1.2em)[
+      #heading(file.name)
+      #table(
+        columns: (auto, 1fr),
+        inset: 0.5em,
+        align: top + left,
+        table.header([*Date*], [*Description*]),
+        ..file.entries
+          .map(entry => ([#entry.date], list(..entry.changes)))
+          .flatten()
+      )
+    ]
+  }
 }
 
 #let signature-field() = {

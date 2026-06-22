@@ -1,0 +1,41 @@
+[metadata]
+group = "Manuals"
+page = ""
+
+# One [[files]] block per document, named by its header title.
+# Within each, list the newest revision first.
+[[files]]
+name = "NORMAL CHECKLIST"
+[[files.entries]]
+date = "Jun 21 2026"
+changes = ["Baseline revision."]
+
+[[files]]
+name = "FLOW PATTERN QUICK REFERENCE"
+[[files.entries]]
+date = "Jun 21 2026"
+changes = ["Baseline revision."]
+
+[[files]]
+name = "BRIEFING"
+[[files.entries]]
+date = "Jun 21 2026"
+changes = ["Baseline revision."]
+
+[[files]]
+name = "Flow Diagrams"
+[[files.entries]]
+date = "Jun 21 2026"
+changes = ["Baseline revision."]
+
+[[files]]
+name = "Operational Reference"
+[[files.entries]]
+date = "Jun 21 2026"
+changes = ["Baseline revision."]
+
+[[files]]
+name = "Adverse Weather Ops"
+[[files.entries]]
+date = "Jun 21 2026"
+changes = ["Baseline revision."]

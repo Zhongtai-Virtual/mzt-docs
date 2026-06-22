@@ -1,0 +1,23 @@
+[metadata]
+group = "Simulator Profiles"
+page = ""
+
+# One [[files]] block per document, named by its header title.
+# Within each, list the newest revision first.
+[[files]]
+name = "Screening Profile A"
+[[files.entries]]
+date = "Jun 21 2026"
+changes = ["Renamed from the former combined sim evaluation as Screening Profile A (T1a)."]
+
+[[files]]
+name = "Screening Profile B"
+[[files.entries]]
+date = "Jun 21 2026"
+changes = ["New Screening Profile B (T1b)."]
+
+[[files]]
+name = "Captain Maneuver Validation Profile"
+[[files.entries]]
+date = "Jun 21 2026"
+changes = ["Baseline revision."]
