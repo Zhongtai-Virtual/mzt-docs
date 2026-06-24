@@ -16,7 +16,7 @@ runs:
 
     - name: Cache fonts
       id: fonts
-      uses: actions/cache@v4
+      uses: actions/cache@v6
       with:
         path: fonts
         # Bump this key whenever the font versions below change.
