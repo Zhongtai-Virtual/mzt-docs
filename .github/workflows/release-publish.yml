@@ -33,7 +33,7 @@ jobs:
       SECTION: ${{ github.event.client_payload.section || inputs.section }}
       TAG: ${{ github.event.client_payload.tag || inputs.tag }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
       - name: Validate inputs
         run: |
