@@ -35,15 +35,24 @@ source $repo/scripts/activate-venv.fish; or exit 1
 if test -z "$DOCUMENSO_API_KEY"
     set -x DOCUMENSO_API_KEY (read -s -P "Documenso API Key: ")
 end
-python $repo/scripts/download.py $envelope_id $dir
+python $repo/scripts/download.py $envelope_id $dir; or begin
+    rm -rf $dir
+    exit 1
+end
 
 # The HotStart sim checklist is built from the manuals data, so only
 # regenerate and sign it when publishing the manuals section.
 if test "$section" = manuals
-    python $repo/scripts/toml2cl60.py >$dir/checklists.xml
-    gpg --sign --detach-sign <$dir/checklists.xml >$dir/checklists.xml.sig
+    python $repo/scripts/toml2cl60.py >$dir/checklists.xml; or begin; rm -rf $dir; exit 1; end
+    gpg --sign --detach-sign <$dir/checklists.xml >$dir/checklists.xml.sig; or begin; rm -rf $dir; exit 1; end
     gpg --verify $dir/checklists.xml.sig
 end
 
+# Guard against an empty download (fish errors on an unmatched glob).
+if test (count (find $dir -mindepth 1 -maxdepth 1)) -eq 0
+    echo "no documents were downloaded" >&2
+    rm -rf $dir
+    exit 1
+end
 mv $dir/* $dest/
 rm -rf $dir
